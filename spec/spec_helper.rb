@@ -14,11 +14,16 @@ Spork.prefork do
   require 'rspec/rails'
   require 'rspec/autorun'
 
+  require 'paperclip/matchers'
+
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
   RSpec.configure do |config|
+
+    config.include Paperclip::Shoulda::Matchers
+
     # ## Mock Framework
     #
     # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
@@ -57,6 +62,13 @@ Spork.prefork do
 
     config.after(:each) do
       DatabaseCleaner.clean
+    end
+
+    config.after(:each) do
+      # Get rid of the linked images
+      if Rails.env.test?
+        FileUtils.rm_rf(Dir["#{Rails.root}/public/system/test/[^.]*"])
+      end
     end
   end
 end

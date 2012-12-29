@@ -34,4 +34,7 @@ Igakuten::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  # Change Paperclip storage directory
+  config.paperclip_defaults = {:path => "#{Rails.root}/public/system/test/:class/:id/:style/:basename.:extension"}
 end
