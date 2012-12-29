@@ -1,21 +1,23 @@
 <%= form_for(@blog_author) do |f| %>
   <% if @blog_author.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@blog_author.errors.count, "error") %> prohibited this blog_author from being saved:</h2>
+      <h2><%= @blog_author.errors.count %>個の項目にエラーがあります。</h2>
 
       <ul>
-      <% @blog_author.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <% @blog_author.errors.messages.each do |msg| %>
+        <% msg[1].each do |str| %>
+          <li><%= str %></li>
+        <% end %>
       <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, '名前' %>
     <%= f.text_field :name %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit '登録' %>
   </div>
 <% end %>
