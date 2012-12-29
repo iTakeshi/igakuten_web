@@ -10,17 +10,6 @@ class BlogAuthorsController < ApplicationController
     end
   end
 
-  # GET /blog_authors/1
-  # GET /blog_authors/1.json
-  def show
-    @blog_author = BlogAuthor.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @blog_author }
-    end
-  end
-
   # GET /blog_authors/new
   # GET /blog_authors/new.json
   def new

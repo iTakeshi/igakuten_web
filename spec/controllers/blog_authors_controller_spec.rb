@@ -42,14 +42,6 @@ describe BlogAuthorsController do
     end
   end
 
-  describe "GET show" do
-    it "assigns the requested blog_author as @blog_author" do
-      blog_author = BlogAuthor.create! valid_attributes
-      get :show, {:id => blog_author.to_param}, valid_session
-      assigns(:blog_author).should eq(blog_author)
-    end
-  end
-
   describe "GET new" do
     it "assigns a new blog_author as @blog_author" do
       get :new, {}, valid_session

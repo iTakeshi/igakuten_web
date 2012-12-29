@@ -11,10 +11,6 @@ describe BlogAuthorsController do
       get("/blog_authors/new").should route_to("blog_authors#new")
     end
 
-    it "routes to #show" do
-      get("/blog_authors/1").should route_to("blog_authors#show", :id => "1")
-    end
-
     it "routes to #edit" do
       get("/blog_authors/1/edit").should route_to("blog_authors#edit", :id => "1")
     end
