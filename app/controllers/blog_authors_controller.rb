@@ -44,7 +44,7 @@ class BlogAuthorsController < ApplicationController
 
     respond_to do |format|
       if @blog_author.save
-        format.html { redirect_to @blog_author, notice: 'Blog author was successfully created.' }
+        format.html { redirect_to blog_authors_path, notice: 'Blog author was successfully created.' }
         format.json { render json: @blog_author, status: :created, location: @blog_author }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class BlogAuthorsController < ApplicationController
 
     respond_to do |format|
       if @blog_author.update_attributes(params[:blog_author])
-        format.html { redirect_to @blog_author, notice: 'Blog author was successfully updated.' }
+        format.html { redirect_to blog_authors_path, notice: 'Blog author was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

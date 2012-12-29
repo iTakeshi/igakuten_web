@@ -81,7 +81,7 @@ describe BlogAuthorsController do
 
       it "redirects to the created blog_author" do
         post :create, {:blog_author => valid_attributes}, valid_session
-        response.should redirect_to(BlogAuthor.last)
+        response.should redirect_to(blog_authors_path)
       end
     end
 
@@ -123,7 +123,7 @@ describe BlogAuthorsController do
       it "redirects to the blog_author" do
         blog_author = BlogAuthor.create! valid_attributes
         put :update, {:id => blog_author.to_param, :blog_author => valid_attributes}, valid_session
-        response.should redirect_to(blog_author)
+        response.should redirect_to(blog_authors_path)
       end
     end
 
