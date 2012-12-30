@@ -1,4 +1,7 @@
 Igakuten::Application.routes.draw do
+  resources :blog_entries
+
+
   resources :blog_authors
 
 
