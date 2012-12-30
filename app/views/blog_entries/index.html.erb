@@ -1,27 +1,20 @@
-<h1>Listing blog_entries</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Unsafe html</th>
-    <th>Blog author</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @blog_entries.each do |blog_entry| %>
-  <tr>
-    <td><%= blog_entry.title %></td>
-    <td><%= blog_entry.unsafe_html %></td>
-    <td><%= blog_entry.blog_author_id %></td>
-    <td><%= link_to 'Show', blog_entry %></td>
-    <td><%= link_to 'Edit', edit_blog_entry_path(blog_entry) %></td>
-    <td><%= link_to 'Destroy', blog_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+<h1>Blog投稿一覧</h1>
 
 <%= link_to 'New Blog entry', new_blog_entry_path %>
+
+<% @blog_entries.each do |e| %>
+  <section class="blog-entry">
+    <header>
+      <h2><%= e.title %></h2>
+      <div class="blog-entry-property">
+        <span class="blog-author"><%= e.blog_author.name %></span>
+        <span class="blog-date">
+          <%= e.created_at.strftime("%Y.%m.%d") %><%= " / " + e.updated_at.strftime("%Y.%m.%d") if e.created_at != e.updated_at %>
+        </span>
+      </div>
+    </header>
+    <article>
+      <%= sanitize(e.unsafe_html) %>
+    </article>
+  </section>
+<% end %>
