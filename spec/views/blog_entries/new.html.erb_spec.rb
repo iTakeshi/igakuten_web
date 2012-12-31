@@ -16,7 +16,7 @@ describe "blog_entries/new" do
     assert_select "form", :action => blog_entries_path, :method => "post" do
       assert_select "input#blog_entry_title", :name => "blog_entry[title]"
       assert_select "textarea#blog_entry_unsafe_html", :name => "blog_entry[unsafe_html]"
-      assert_select "input#blog_entry_blog_author_id", :name => "blog_entry[blog_author_id]"
+      assert_select "select#blog_entry_blog_author_id", :name => "blog_entry[blog_author_id]"
     end
   end
 end
