@@ -1,0 +1,15 @@
+development:
+  login:
+    required: true
+    user: username
+    pass: password
+
+test:
+  login:
+    required: false
+
+production:
+  login:
+    required: true
+    user: username
+    pass: password

@@ -19,3 +19,6 @@
 
 # Ignore secret_token
 /config/initializers/secret_token.rb
+
+# Ignore custome configuration file
+/config/config.yml
