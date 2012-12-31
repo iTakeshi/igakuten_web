@@ -1,29 +1,31 @@
 <%= form_for(@blog_entry) do |f| %>
   <% if @blog_entry.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@blog_entry.errors.count, "error") %> prohibited this blog_entry from being saved:</h2>
+      <h2><%= @blog_entry.errors.count %>個の項目にエラーがあります。</h2>
 
       <ul>
-      <% @blog_entry.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <% @blog_entry.errors.messages.each do |msg| %>
+        <% msg[1].each do |str| %>
+          <li><%= str %></li>
+        <% end %>
       <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title, 'タイトル' %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :unsafe_html %><br />
-    <%= f.text_area :unsafe_html %>
+    <%= f.label :blog_author_id, '投稿者を選択' %><br />
+    <%= f.select :blog_author_id, options_from_collection_for_select(BlogAuthor.all, :id, :name), prompt: '選択' %>
   </div>
   <div class="field">
-    <%= f.label :blog_author_id %><br />
-    <%= f.number_field :blog_author_id %>
+    <%= f.label :unsafe_html, '本文' %><br />
+    <%= f.cktext_area :unsafe_html, width: 800, height: 400 %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit '投稿' %>
   </div>
 <% end %>
