@@ -6,7 +6,7 @@
       <span class="blog-date">
         <%= blog_entry.created_at.strftime("%Y.%m.%d") %><%= " / " + blog_entry.updated_at.strftime("%Y.%m.%d") if blog_entry.created_at != blog_entry.updated_at %>
       </span>
-      <span class="blog-edit"><%= link_to '編集', edit_blog_entry_path(blog_entry) %>
+      <span class="blog-edit"><%= link_to '編集', edit_blog_entry_path(blog_entry) %></span>
     </div>
   </header>
   <article>
