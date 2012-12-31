@@ -1,20 +1,5 @@
 <h1>Blog投稿一覧</h1>
 
-<%= link_to 'New Blog entry', new_blog_entry_path %>
+<%= link_to '新規投稿', new_blog_entry_path %>
 
-<% @blog_entries.each do |e| %>
-  <section class="blog-entry">
-    <header>
-      <h2><%= e.title %></h2>
-      <div class="blog-entry-property">
-        <span class="blog-author"><%= e.blog_author.name %></span>
-        <span class="blog-date">
-          <%= e.created_at.strftime("%Y.%m.%d") %><%= " / " + e.updated_at.strftime("%Y.%m.%d") if e.created_at != e.updated_at %>
-        </span>
-      </div>
-    </header>
-    <article>
-      <%= sanitize(e.unsafe_html) %>
-    </article>
-  </section>
-<% end %>
+<%= render partial: 'blog_entry', collection: @blog_entries %>

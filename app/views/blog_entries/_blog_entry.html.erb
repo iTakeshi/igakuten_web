@@ -1,0 +1,14 @@
+<section class="blog-entry">
+  <header>
+    <h1><%= blog_entry.title %></h1>
+    <div class="blog-entry-property">
+      <span class="blog-author"><%= blog_entry.blog_author.name %></span>
+      <span class="blog-date">
+        <%= blog_entry.created_at.strftime("%Y.%m.%d") %><%= " / " + blog_entry.updated_at.strftime("%Y.%m.%d") if blog_entry.created_at != blog_entry.updated_at %>
+      </span>
+    </div>
+  </header>
+  <article>
+    <%= sanitize(blog_entry.unsafe_html) %>
+  </article>
+</section>
