@@ -1,4 +1,6 @@
 Igakuten::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+
   resources :blog_entries
 
 
