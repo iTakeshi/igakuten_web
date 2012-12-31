@@ -16,3 +16,6 @@
 
 # Ignore CKEditor assets directory
 /public/ckeditor_assets
+
+# Ignore secret_token
+/config/initializers/secret_token.rb
