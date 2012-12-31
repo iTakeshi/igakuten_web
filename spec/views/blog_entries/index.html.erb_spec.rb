@@ -25,7 +25,7 @@ describe "blog_entries/index" do
   it "renders a list of blog_entries" do
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "section h2", :text => "Title".to_s, :count => 2
+    assert_select "section h1", :text => "Title".to_s, :count => 2
     assert_select "section article", :text => "MyText".to_s, :count => 2
     assert_select "section span.blog-author", :text => "John".to_s, :count => 2
     assert_select "section span.blog-date", :text => /^\d{4}\.\d{2}\.\d{2}$/, :count => 1

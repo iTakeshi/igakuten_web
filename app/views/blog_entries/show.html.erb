@@ -1,20 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @blog_entry.title %>
-</p>
-
-<p>
-  <b>Unsafe html:</b>
-  <%= @blog_entry.unsafe_html %>
-</p>
-
-<p>
-  <b>Blog author:</b>
-  <%= @blog_entry.blog_author_id %>
-</p>
-
+<%= render partial: 'blog_entry', locals: { blog_entry: @blog_entry } %>
 
 <%= link_to 'Edit', edit_blog_entry_path(@blog_entry) %> |
 <%= link_to 'Back', blog_entries_path %>
