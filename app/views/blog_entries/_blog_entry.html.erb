@@ -10,6 +10,9 @@
     </div>
   </header>
   <article>
-    <%= sanitize(blog_entry.unsafe_html) %>
+    <%= sanitize blog_entry.unsafe_html,
+      tags: %w(div p em strong u strike ul ol li a img pre code hr h1 h2 h3 h4 h5 h6 table tbody tr th td caption),
+      attributes: %w(id class style width height href src alt title align border cellpadding cellspacing summary scope colspan rowspan)
+    %>
   </article>
 </section>
