@@ -1,11 +1,13 @@
 Igakuten::Application.routes.draw do
+
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :blog_entries
-
-
   resources :blog_authors
 
+  get '/:action', controller: 'static_pages'
+
+  root to: 'static_pages#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
