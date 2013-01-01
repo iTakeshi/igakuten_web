@@ -6,5 +6,4 @@ CKEDITOR.editorConfig = function( config )
         [ 'Bold', 'Italic', 'Underline', 'Strike', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Image', 'Table', 'HorizontalRule', 'Smiley' ],
         [ 'Format' ]
     ];
-    config.language = 'ja';
 };
