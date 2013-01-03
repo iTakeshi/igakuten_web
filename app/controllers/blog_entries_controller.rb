@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class BlogEntriesController < ApplicationController
   # GET /blog_entries
   # GET /blog_entries.json
@@ -44,7 +46,7 @@ class BlogEntriesController < ApplicationController
 
     respond_to do |format|
       if @blog_entry.save
-        format.html { redirect_to @blog_entry, notice: 'Blog entry was successfully created.' }
+        format.html { redirect_to @blog_entry, notice: 'ブログの投稿が完了しました。' }
         format.json { render json: @blog_entry, status: :created, location: @blog_entry }
       else
         format.html { render action: "new" }
@@ -60,7 +62,7 @@ class BlogEntriesController < ApplicationController
 
     respond_to do |format|
       if @blog_entry.update_attributes(params[:blog_entry])
-        format.html { redirect_to @blog_entry, notice: 'Blog entry was successfully updated.' }
+        format.html { redirect_to @blog_entry, notice: '投稿内容を更新しました。' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

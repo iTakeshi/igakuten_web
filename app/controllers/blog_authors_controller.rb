@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class BlogAuthorsController < ApplicationController
   # GET /blog_authors
   # GET /blog_authors.json
@@ -33,7 +35,7 @@ class BlogAuthorsController < ApplicationController
 
     respond_to do |format|
       if @blog_author.save
-        format.html { redirect_to blog_authors_path, notice: 'Blog author was successfully created.' }
+        format.html { redirect_to blog_authors_path, notice: '執筆者登録を完了しました。' }
         format.json { render json: @blog_author, status: :created, location: @blog_author }
       else
         format.html { render action: "new" }
@@ -49,7 +51,7 @@ class BlogAuthorsController < ApplicationController
 
     respond_to do |format|
       if @blog_author.update_attributes(params[:blog_author])
-        format.html { redirect_to blog_authors_path, notice: 'Blog author was successfully updated.' }
+        format.html { redirect_to blog_authors_path, notice: '執筆者名を変更しました。' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
