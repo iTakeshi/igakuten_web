@@ -1,4 +1,4 @@
-Igakuten::Application.routes.draw do
+IgakutenWeb::Application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
 

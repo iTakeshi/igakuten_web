@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Igakuten::Application.load_tasks
+IgakutenWeb::Application.load_tasks
