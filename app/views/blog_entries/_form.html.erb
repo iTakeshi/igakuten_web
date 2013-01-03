@@ -19,6 +19,7 @@
   </div>
   <div class="field">
     <%= f.label :blog_author_id, '投稿者を選択' %><br />
+    初めて医学展Blogを執筆するスタッフは<%= link_to '執筆者登録', new_blog_author_path %>する必要があります。<br>
     <%= f.select :blog_author_id, options_from_collection_for_select(BlogAuthor.all, :id, :name), prompt: '選択' %>
   </div>
   <div class="field">
