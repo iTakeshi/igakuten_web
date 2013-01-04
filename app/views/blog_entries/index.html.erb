@@ -4,6 +4,6 @@
   <%= link_to '新規投稿', new_blog_entry_path %>
 <% end %>
 
-<%= render partial: 'blog_entry', collection: @blog_entries, locals: { admin: @admin } %>
+<%= render partial: 'blog_entry', collection: @blog_entries %>
 
 <%= paginate @blog_entries, window: 2 %>

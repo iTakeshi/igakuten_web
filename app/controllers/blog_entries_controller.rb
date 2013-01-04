@@ -1,13 +1,13 @@
 # coding: utf-8
 
 class BlogEntriesController < ApplicationController
-  skip_before_filter :authenticate, only: :index
+  skip_before_filter :authenticate, only: [ :index, :show ]
 
   # GET /blog_entries
   # GET /blog_entries.json
   def index
     @blog_entries = BlogEntry.page params[:page]
-    if request.path == "/blog_entries"
+    if request.path.include? "blog_entries"
       @admin = true
     else
       @admin = false
@@ -23,6 +23,11 @@ class BlogEntriesController < ApplicationController
   # GET /blog_entries/1.json
   def show
     @blog_entry = BlogEntry.find(params[:id])
+    if request.path.include? "blog_entries"
+      @admin = true
+    else
+      @admin = false
+    end
 
     respond_to do |format|
       format.html # show.html.erb

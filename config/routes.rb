@@ -6,6 +6,8 @@ IgakutenWeb::Application.routes.draw do
   resources :blog_authors
 
   get '/blog', to: 'blog_entries#index'
+  get '/blog/:id', to: 'blog_entries#show'
+
   get '/admin', to: 'admin#index'
   get '/:action', controller: 'static_pages'
 

@@ -1,6 +1,6 @@
 <section class="blog-entry">
   <header>
-    <h1><%= link_to blog_entry.title, blog_entry %></h1>
+    <h1><%= link_to blog_entry.title, @admin ? blog_entry : "/blog/#{blog_entry.id}" %></h1>
     <div class="blog-entry-property">
       <span class="blog-author">by <%= blog_entry.blog_author.name %></span>
       <span class="blog-date">
