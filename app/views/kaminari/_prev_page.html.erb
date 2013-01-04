@@ -1,0 +1,9 @@
+<li>
+  <% if current_page.first? %>
+    <span class="disabled">
+  <% end %>
+  <%= link_to_unless current_page.first?, '新しい投稿', url, :rel => 'prev', :remote => remote %>
+  <% if current_page.first? %>
+    </span>
+  <% end %>
+</li>
