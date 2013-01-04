@@ -34,14 +34,25 @@ a {
 // scaffold style
 // ====================================
 
+form {
+  margin: 15px;
+}
+
 #notice {
-  color: green;
+  color: #090;
+}
+
+.field {
+  margin: 15px;
 }
 
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+  display: inline;
+
+  label {
+    padding: 5px;
+    background-color: #f77;
+  }
 }
 
 #error_explanation {
