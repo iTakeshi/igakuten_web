@@ -1,17 +1,96 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Igakuten</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div id="notice">
-    <%= flash[:notice] %>
-  </div>
+  <head>
+    <title>Igakuten</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<%= yield %>
+  <body>
+    <div id="global-wrapper">
+
+      <div id="header">
+        <div class="wrapper">
+
+          <div id="banner">
+            <img src="img/banner.jpg" title="banner">
+            <h1><a href="/">医学展52</a></h1>
+          </div>
+
+          <nav>
+            <ul>
+              <li><span><a href="">ホーム</a></span></li>
+              <li><span><a href="">ごあいさつ</a></span>
+                <ul>
+                  <li><a href="">玉木医学部長より</a></li>
+                  <li><a href="">実行委員長より</a></li>
+                </ul>
+              </li>
+              <li><span><a href="">医学展について</a></span>
+                <ul>
+                  <li><a href="">テーマ</a></li>
+                  <li><a href="">歴史</a></li>
+                </ul>
+              </li>
+              <li><span><a href="">部門紹介</a></span>
+                <ul>
+                  <li><a href="">体験</a></li>
+                  <li><a href="">展示</a></li>
+                  <li><a href="">科学教室</a></li>
+                </ul>
+              </li>
+              <li><span><a href="">イベント案内</a></span>
+                <ul>
+                  <li><a href="">講演会</a></li>
+                  <li><a href="">ドクターヘリ</a></li>
+                </ul>
+              </li>
+              <li><span><a href="">提携団体</a></span>
+                <ul>
+                  <li><a href="">IFMSA</a></li>
+                  <li><a href="">出店</a></li>
+                  <li><a href="">産婦人科&AMP;PCAF</a></li>
+                </ul>
+              </li>
+              <li><span><a href="">アクセス</a></span>
+                <ul>
+                  <li><a href="">会場への交通案内</a></li>
+                  <li><a href="">会場内マップ</a></li>
+                </ul>
+              </li>
+              <li id="site-search">
+                <form method="GET" action="http://www.google.co.jp/search">
+                  <input type="hidden" name="hl" value="ja">
+                  <input type="hidden" name="sitesearch" value="hokudai-igakuten.org">
+                  <input type="text" name="q" class="frm">
+                </form>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+      </div><!-- end of header -->
+
+
+      <div id="notice">
+        <%= flash[:notice] %>
+      </div>
+
+      <!-- main contents -->
+        <%= yield %>
+      <!-- end main contents -->
+
+
+      <div id="footer">
+        <div class="wrapper">
+
+          <address>2012-2013 Hokkaido Univ. Igakuten Executive Comittee, all right reserved.</address>
+
+        </div>
+      </div>
+
+    </div>
 
 </body>
 </html>
