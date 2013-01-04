@@ -1,5 +1,7 @@
-<h1>ブログ投稿一覧</h1>
+<h1>実行委員会ブログ</h1>
 
-<%= link_to '新規投稿', new_blog_entry_path %>
+<% if @admin %>
+  <%= link_to '新規投稿', new_blog_entry_path %>
+<% end %>
 
 <%= render partial: 'blog_entry', collection: @blog_entries, locals: { admin: @admin } %>
