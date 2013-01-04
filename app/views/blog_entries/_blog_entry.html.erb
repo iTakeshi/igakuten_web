@@ -2,9 +2,9 @@
   <header>
     <h1><%= link_to blog_entry.title, blog_entry %></h1>
     <div class="blog-entry-property">
-      <span class="blog-author"><%= blog_entry.blog_author.name %></span>
+      <span class="blog-author">by <%= blog_entry.blog_author.name %></span>
       <span class="blog-date">
-        <%= blog_entry.created_at.strftime("%Y.%m.%d") %><%= " / " + blog_entry.updated_at.strftime("%Y.%m.%d") if blog_entry.created_at != blog_entry.updated_at %>
+        posted at: <%= blog_entry.created_at.strftime("%Y.%m.%d") %><%= " / updated at: " + blog_entry.updated_at.strftime("%Y.%m.%d") if blog_entry.created_at != blog_entry.updated_at %>
       </span>
       <% if @admin %>
         <span class="blog-edit"><%= link_to '編集', edit_blog_entry_path(blog_entry) %></span>
