@@ -1,0 +1,16 @@
+<h1>管理者用メニュー</h1>
+
+<ul>
+  <li>ブログ執筆者
+    <ul>
+      <li><%= link_to '一覧', blog_authors_path %></li>
+      <li><%= link_to '執筆者登録', new_blog_author_path %></li>
+    </ul>
+  </li>
+  <li>ブログ投稿
+    <ul>
+      <li><%= link_to '一覧', blog_entries_path %></li>
+      <li><%= link_to '新規投稿', new_blog_entry_path %></li>
+    </ul>
+  </li>
+</ul>
