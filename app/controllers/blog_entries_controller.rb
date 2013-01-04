@@ -1,6 +1,8 @@
 # coding: utf-8
 
 class BlogEntriesController < ApplicationController
+  skip_before_filter :authenticate, only: :index
+
   # GET /blog_entries
   # GET /blog_entries.json
   def index
