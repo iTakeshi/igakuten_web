@@ -4,7 +4,7 @@ describe "blog_entries/index" do
   before(:each) do
     blog_author = BlogAuthor.create!(name: 'John')
     time = Time.now
-    assign(:blog_entries, [
+    assign(:blog_entries, Kaminari.paginate_array([
       stub_model(BlogEntry,
         :title => "Title",
         :unsafe_html => "MyText",
@@ -19,7 +19,7 @@ describe "blog_entries/index" do
         :created_at => time,
         :updated_at => time
       )
-    ])
+    ]).page(1))
   end
 
   it "renders a list of blog_entries" do
@@ -27,8 +27,8 @@ describe "blog_entries/index" do
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "section h1", :text => "Title".to_s, :count => 2
     assert_select "section article", :text => "MyText".to_s, :count => 2
-    assert_select "section span.blog-author", :text => "John".to_s, :count => 2
-    assert_select "section span.blog-date", :text => /^\d{4}\.\d{2}\.\d{2}$/, :count => 1
-    assert_select "section span.blog-date", :text => /^\d{4}\.\d{2}\.\d{2} \/ \d{4}\.\d{2}\.\d{2}$/, :count => 1
+    assert_select "section span.blog-author", :text => /John/, :count => 2
+    assert_select "section span.blog-date", :text => /^posted at: \d{4}\.\d{2}\.\d{2}$/, :count => 1
+    assert_select "section span.blog-date", :text => /^posted at: \d{4}\.\d{2}\.\d{2} \/ updated at: \d{4}\.\d{2}\.\d{2}$/, :count => 1
   end
 end
