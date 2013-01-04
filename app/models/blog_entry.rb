@@ -12,7 +12,8 @@ class BlogEntry < ActiveRecord::Base
     presence: { message: '投稿者を選択してください。初投稿の場合は執筆者登録が必要です。' }
 
   validates :title,
-    presence: { message: 'タイトルを入力してください。' }
+    presence: { message: 'タイトルを入力してください。' },
+    uniqueness: { message: '同じタイトルの投稿が既に存在します。' }
 
   validates :unsafe_html,
     presence: { message: '本文を入力してください。' }
