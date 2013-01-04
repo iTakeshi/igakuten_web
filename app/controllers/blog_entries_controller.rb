@@ -7,6 +7,11 @@ class BlogEntriesController < ApplicationController
   # GET /blog_entries.json
   def index
     @blog_entries = BlogEntry.all
+    if request.path == "/blog_entries"
+      @admin = true
+    else
+      @admin = false
+    end
 
     respond_to do |format|
       format.html # index.html.erb
