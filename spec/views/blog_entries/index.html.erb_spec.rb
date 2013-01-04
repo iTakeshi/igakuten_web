@@ -28,7 +28,6 @@ describe "blog_entries/index" do
     assert_select "section h1", :text => "Title".to_s, :count => 2
     assert_select "section article", :text => "MyText".to_s, :count => 2
     assert_select "section span.blog-author", :text => /John/, :count => 2
-    assert_select "section span.blog-date", :text => /^posted at: \d{4}\.\d{2}\.\d{2}$/, :count => 1
-    assert_select "section span.blog-date", :text => /^posted at: \d{4}\.\d{2}\.\d{2} \/ updated at: \d{4}\.\d{2}\.\d{2}$/, :count => 1
+    assert_select "section span.blog-date", :text => /^posted at: \d{4}\.\d{2}\.\d{2}$/, :count => 2
   end
 end
