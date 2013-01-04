@@ -3,6 +3,9 @@
 class BlogEntry < ActiveRecord::Base
   attr_accessible :blog_author_id, :title, :unsafe_html
 
+  default_scope order: 'created_at DESC'
+  paginates_per 5
+
   belongs_to :blog_author
 
   validates :blog_author_id,

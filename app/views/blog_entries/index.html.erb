@@ -5,3 +5,5 @@
 <% end %>
 
 <%= render partial: 'blog_entry', collection: @blog_entries, locals: { admin: @admin } %>
+
+<%= paginate @blog_entries, window: 2 %>

@@ -6,7 +6,7 @@ class BlogEntriesController < ApplicationController
   # GET /blog_entries
   # GET /blog_entries.json
   def index
-    @blog_entries = BlogEntry.all
+    @blog_entries = BlogEntry.page params[:page]
     if request.path == "/blog_entries"
       @admin = true
     else
