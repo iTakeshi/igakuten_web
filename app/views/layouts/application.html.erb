@@ -73,13 +73,17 @@
       </div><!-- end of header -->
 
 
-      <div id="notice">
-        <%= flash[:notice] %>
-      </div>
+      <div id="main">
+        <div class="wrapper">
 
-      <!-- main contents -->
-        <%= yield %>
-      <!-- end main contents -->
+          <div id="notice">
+            <%= flash[:notice] %>
+          </div>
+
+          <%= yield %>
+
+        </div>
+      </div><!-- end main contents -->
 
 
       <div id="footer">
