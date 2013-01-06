@@ -1,0 +1,18 @@
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+a {
+  color: $base-link-color;
+
+  &:hover   { color: lighten($base-link-color, 15%); }
+  &:active  { color: lighten($base-link-color, 30%);}
+  &:visited { color: darken($base-link-color, 15%); }
+}
