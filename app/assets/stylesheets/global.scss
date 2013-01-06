@@ -3,10 +3,13 @@ html {
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background-color: #fff;
   color: #333;
   font-size: 13px;
   line-height: 18px;
+  text-align: justify;
 }
 
 a {
@@ -15,4 +18,12 @@ a {
   &:hover   { color: lighten($base-link-color, 15%); }
   &:active  { color: lighten($base-link-color, 30%);}
   &:visited { color: darken($base-link-color, 15%); }
+}
+
+.clearfix {
+  display: block;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  clear: both;
 }

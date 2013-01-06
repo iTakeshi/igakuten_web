@@ -1,0 +1,186 @@
+$wrapper-width: 840px;
+
+.wrapper {
+  width: $wrapper-width;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#header {
+  height: 90px;
+  margin-bottom: 20px;
+
+  #banner {
+    position: relative;
+    height: 60px;
+
+    img {
+      width: 100%;
+      height: 60px;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      position: absolute;
+      left: 20px; top: 15px;
+      margin: 0;
+      padding: 0;
+      font-size: 30px;
+    }
+  }
+
+  nav {
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    &.stick-to-top {
+      position: fixed;
+      top: 0;
+    }
+
+    & > ul {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      height: 30px;
+      list-style: none;
+
+      & > li {
+        position: relative;
+        float: left;
+        height: 30px;
+        margin: 0;
+        padding: 0 10px;
+        border: #aaa 1px solid;
+        background-color: #fff; /* Be sure to replace this 2012-12-02:iTakeshi */
+
+        &#site-search {
+          float: right;
+
+          input[type="text"] {
+            width: 169px;
+            margin-top: 5px;
+            background-image: url('../../img/search.png');
+            background-repeat: no-repeat;
+            background-position: right bottom;
+          }
+        }
+
+        span {
+          display: inline;
+          line-height: 30px;
+        }
+
+        ul {
+          position: absolute;
+          display: none;
+          width: auto;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          z-index: 100;
+        }
+      }
+    }
+  }
+}
+
+$side-width: 200px;
+$side-margin: 20px;
+#main {
+  z-index: 0;
+
+  #side {
+    float: left;
+    width: $side-width;
+    margin-right: $side-margin;
+
+    nav {
+      width: inherit;
+
+      &.stick-to-top {
+        position: fixed;
+        top: 50px;
+      }
+
+      a {
+        display: block;
+        height: 30px;
+        color: #333;
+        text-decoration: none;
+
+        span {
+          line-height: 30px;
+          vertical-align: middle;
+        }
+      }
+
+      & > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border: #aaa 1px solid;
+        border-radius: 10px;
+
+        & > li {
+          border-bottom: #aaa 1px double;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          & > a {
+            padding-left: 20px;
+          }
+
+          & > ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            & > li {
+
+              & > a {
+                padding-right: 20px;
+                text-align: right;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #contents {
+    float: right;
+    width: $wrapper-width - ($side-width + $side-margin);
+
+    h1 {
+      margin: 20px 0 0 0;
+      border-bottom: #666 3px solid;
+      text-align: right;
+      font-size: 32px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      & + p {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+#footer {
+  address {
+    margin: 20px 0;
+    padding: 15px 0 0 0;
+    border-top: #ddd 1px solid;
+    text-align: center;
+    font-style: normal;
+  }
+}
