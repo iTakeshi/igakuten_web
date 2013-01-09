@@ -1,4 +1,5 @@
 $wrapper-width: 840px;
+$background-color: #ccffcc;
 
 .wrapper {
   width: $wrapper-width;
@@ -6,9 +7,15 @@ $wrapper-width: 840px;
   padding: 0;
 }
 
+body {
+  background: $background-color;
+}
+
 #header {
   height: 90px;
   margin-bottom: 20px;
+  background: image-url('header-bg.png');
+  background-repeat: repeat-x;
 
   #banner {
     position: relative;
@@ -54,34 +61,35 @@ $wrapper-width: 840px;
         height: 30px;
         margin: 0;
         padding: 0 10px;
-        border: #aaa 1px solid;
-        background-color: #fff; /* Be sure to replace this 2012-12-02:iTakeshi */
+        background: transparent;
 
         &#site-search {
           float: right;
 
-          input[type="text"] {
-            width: 169px;
-            margin-top: 5px;
-            background-image: url('../../img/search.png');
-            background-repeat: no-repeat;
-            background-position: right bottom;
+          form {
+            height: 20px;
+            margin: 5px 0 0 0;
+            padding: 0;
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 10px;
+
+            input[type="text"] {
+              width: 160px;
+              margin: 0;
+              padding: 3px 10px 2px;
+              border: none;
+              outline: none;
+              background: image-url('search.png');
+              background-repeat: no-repeat;
+              background-position: 160px 4px;
+            }
           }
         }
 
-        span {
+        a {
           display: inline;
           line-height: 30px;
-        }
-
-        ul {
-          position: absolute;
-          display: none;
-          width: auto;
-          margin: 0;
-          padding: 0;
-          list-style: none;
-          z-index: 100;
+          color: #fff;
         }
       }
     }
