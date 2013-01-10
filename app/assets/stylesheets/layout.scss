@@ -48,19 +48,19 @@ body {
       top: 0;
     }
 
-    & > ul {
+    ul {
       width: 100%;
       margin: 0;
       padding: 0;
       height: 30px;
       list-style: none;
 
-      & > li {
+      li {
         position: relative;
         float: left;
         height: 30px;
         margin: 0;
-        padding: 0 10px;
+        padding: 1px 0;
         background: transparent;
 
         &#site-search {
@@ -78,7 +78,7 @@ body {
               margin: 0;
               padding: 3px 10px 2px;
               border: none;
-              outline: none;
+              outline: none; /* set alternative effects by js. */
               background: image-url('search.png');
               background-repeat: no-repeat;
               background-position: 160px 4px;
@@ -87,9 +87,23 @@ body {
         }
 
         a {
-          display: inline;
-          line-height: 30px;
-          color: #fff;
+          display: block;
+          height: 28px;
+          margin: 0;
+          padding: 0 10px;
+          background: transparent;
+
+          &:hover, &:focus, &.current {
+            background: rgba(255, 225, 225, 0.25);
+            outline: none;
+          }
+
+          span {
+            display: inline;
+            line-height: 28px;
+            color: #fff;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
+          }
         }
       }
     }

@@ -14,5 +14,6 @@ class StaticPagesController < ApplicationController
   skip_before_filter :authenticate
 
   def index
+    @top_page = true
   end
 end

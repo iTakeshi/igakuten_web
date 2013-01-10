@@ -14,19 +14,19 @@
         <div class="wrapper">
 
           <div id="banner">
-            <img src="assets/banner.jpg" title="banner">
+            <%= image_tag 'banner.jpg', title: 'banner' %>
             <h1><a href="/">医学展52</a></h1>
           </div>
 
           <nav>
             <ul>
-              <li><a href="">ホーム</a></li>
-              <li><a href="">ごあいさつ</a></li>
-              <li><a href="">医学展について</a></li>
-              <li><a href="">部門紹介</a></li>
-              <li><a href="">イベント案内</a></li>
-              <li><a href="">提携団体</a></li>
-              <li><a href="">アクセス</a></li>
+              <li><a href="" class="<%= @top_page ? 'current' : '' %>"><span>ホーム</span></a></li>
+              <li><a href="" class="<%= @_page ? 'current' : '' %>"><span>ごあいさつ</span></a></li>
+              <li><a href="" class="<%= @_page ? 'current' : '' %>"><span>医学展について</span></a></li>
+              <li><a href="" class="<%= @_page ? 'current' : '' %>"><span>部門紹介</span></a></li>
+              <li><a href="" class="<%= @_page ? 'current' : '' %>"><span>イベント案内</span></a></li>
+              <li><a href="" class="<%= @_page ? 'current' : '' %>"><span>提携団体</span></a></li>
+              <li><a href="" class="<%= @_page ? 'current' : '' %>"><span>アクセス</span></a></li>
               <li id="site-search">
                 <form method="GET" action="http://www.google.co.jp/search">
                   <input type="hidden" name="hl" value="ja">
