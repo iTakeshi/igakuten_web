@@ -8,17 +8,23 @@
   </head>
 
   <body>
+
     <div id="global-wrapper">
 
       <div id="header">
-        <div class="wrapper">
+        <div class="wrapper-bg">
+          <div class="wrapper">
 
-          <div id="banner">
-            <%= image_tag 'banner.jpg', title: 'banner' %>
-            <h1><a href="/">医学展52</a></h1>
+            <div id="banner">
+              <%= image_tag 'banner.jpg', title: 'banner' %>
+              <h1><a href="/">医学展52</a></h1>
+            </div>
+
           </div>
+        </div>
 
-          <nav>
+        <nav>
+          <div class="wrapper">
             <ul>
               <li><a href="" class="<%= @top_page ? 'current' : '' %>"><span>ホーム</span></a></li>
               <li><a href="" class="<%= @_page ? 'current' : '' %>"><span>ごあいさつ</span></a></li>
@@ -35,34 +41,38 @@
                 </form>
               </li>
             </ul>
-          </nav>
+          </div>
+        </nav>
 
-        </div>
       </div><!-- end of header -->
 
 
       <div id="main">
-        <div class="wrapper">
+        <div class="wrapper-bg">
+          <div class="wrapper">
 
-          <div id="notice">
-            <%= flash[:notice] %>
+            <div id="notice">
+              <%= flash[:notice] %>
+            </div>
+
+            <%= yield %>
+
           </div>
-
-          <%= yield %>
-
         </div>
       </div><!-- end main contents -->
 
 
       <div id="footer">
-        <div class="wrapper">
+        <div class="wrapper-bg">
+          <div class="wrapper">
 
-          <address>2012-2013 Hokkaido Univ. Igakuten Executive Comittee, all right reserved.</address>
+            <address>2012-2013 Hokkaido Univ. Igakuten Executive Comittee, all right reserved.</address>
 
+          </div>
         </div>
       </div>
 
     </div>
 
-</body>
+  </body>
 </html>

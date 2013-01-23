@@ -1,5 +1,13 @@
 $wrapper-width: 840px;
+$wrapper-margin: 60px;
 $background-color: #ccffcc;
+
+.wrapper-bg {
+  width: $wrapper-width + $wrapper-margin * 2;
+  margin: 0 auto;
+  padding: 0;
+  background: image-url('wrapper-bg.png');
+}
 
 .wrapper {
   width: $wrapper-width;
@@ -13,7 +21,6 @@ body {
 
 #header {
   height: 90px;
-  margin-bottom: 20px;
   background: image-url('header-bg.png');
   background-repeat: repeat-x;
 
@@ -38,6 +45,8 @@ body {
   }
 
   nav {
+    background: image-url('header-nav-bg.png');
+
     a {
       color: #333;
       text-decoration: none;
@@ -59,7 +68,7 @@ body {
         position: relative;
         float: left;
         height: 30px;
-        margin: 0;
+        margin: 0 5px 0 0;
         padding: 1px 0;
         background: transparent;
 
@@ -114,6 +123,10 @@ $side-width: 200px;
 $side-margin: 20px;
 #main {
   z-index: 0;
+
+  .wrapper {
+    padding: 15px 0;
+  }
 
   #side {
     float: left;
@@ -199,8 +212,8 @@ $side-margin: 20px;
 
 #footer {
   address {
-    margin: 20px 0;
-    padding: 15px 0 0 0;
+    margin: 0;
+    padding: 15px 0 15px 0;
     border-top: #ddd 1px solid;
     text-align: center;
     font-style: normal;
