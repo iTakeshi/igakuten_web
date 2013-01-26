@@ -18,7 +18,7 @@ set :rails_env,   :production
 set :user,   'igakuten'
 set :domain, 'hokudai-igakuten.org'
 set :port,   '10022'
-set :branch, 'master'
+set :branch, '52'
 
 set :deploy_to, "/var/app/#{application}"
 role :web, domain                   # Your HTTP server, Apache/etc
