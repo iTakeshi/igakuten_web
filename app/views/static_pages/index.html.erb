@@ -1,31 +1,47 @@
-<section id="welcome">
-  <%= image_tag 'loading.gif', id: 'loading' %>
-  <div id="campus"></div>
-</section>
+<div id="index-content">
+  <section id="welcome">
+    <%= image_tag 'loading.gif', id: 'loading' %>
+    <div id="campus"></div>
+  </section>
 
-<section id="updates">
-  <h2>更新情報</h2>
-  <ul>
-    <li>
-      <span class="date">2013-01-XX</span>
-      サイトを公開しました。
-    </li>
-  </ul>
-</section>
+  <div id="index-left">
+    <section id="introduction">
+      <h1>北海道大学医学展へようこそ！</h1>
+      <article>
+        <p>
+         ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。
+        </p>
+        <p>
+         ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。ダミーの文章。
+        </p>
+      </article>
+    </section>
 
-<section id="blog-updates">
-  <h2>Staff Blog</h2>
-  <ul>
-    <% @blog_updates.each do |blog| %>
-      <li>
-        <span class="date"><%= blog.created_at.strftime("%Y-%m-%d") %></span>
-        「<%= blog.title %>」 by <%= blog.blog_author.name %>
-      </li>
-    <% end %>
-  </ul>
-</section>
+    <section id="site-updates">
+      <h1>更新情報</h1>
+      <ul>
+        <li>
+          <span class="date">2013-01-XX</span>
+          サイトを公開しました。
+        </li>
+      </ul>
+    </section>
 
-<section id="twitter">
-  <a class="twitter-timeline" width="300" href="https://twitter.com/igakuten" data-widget-id="289913621562130432">@igakuten からのツイート</a>
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-</section>
+    <section id="blog-updates">
+      <h1>スタッフブログ</h1>
+      <ul>
+        <% @blog_updates.each do |blog| %>
+          <li>
+            <span class="date"><%= blog.created_at.strftime("%Y-%m-%d") %></span>
+            「<%= blog.title %>」 by <%= blog.blog_author.name %>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  </div>
+
+  <section id="twitter">
+    <a class="twitter-timeline" width="300" href="https://twitter.com/igakuten" data-widget-id="289913621562130432">@igakuten からのツイート</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </section>
+</div>

@@ -1,0 +1,34 @@
+#index-content {
+  #welcome {
+    position: relative;
+    width: 640px;
+    height: 480px;
+    margin: 15px auto;
+
+    #loading {
+      display: block;
+      position: absolute;
+      top: 64px; left: 120px;
+    }
+
+    #campus {
+      display: none;
+      width: 640px;
+      height: 480px;
+    }
+  }
+
+  #index-left {
+    float: left;
+    width: 520px;
+    margin: 0 20px 0 0;
+    padding: 0;
+
+    #site-updates {
+    }
+
+    #blog-updates {
+      width: 300px;
+    }
+  }
+}
