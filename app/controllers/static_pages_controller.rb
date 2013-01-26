@@ -11,7 +11,7 @@
 # HTMLファイルは app/views/static_pages/(action).html.erb に定義してください。
 
 class StaticPagesController < ApplicationController
-  skip_before_filter :authenticate
+#  skip_before_filter :authenticate
 
   def index
     @top_page = true
