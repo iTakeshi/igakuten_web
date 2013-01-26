@@ -51,6 +51,7 @@ gem 'kaminari'
 
 # Deploy with Capistrano
 gem 'capistrano'
+gem 'capistrano_colors'
 
 # To use debugger
 # gem 'debugger'
