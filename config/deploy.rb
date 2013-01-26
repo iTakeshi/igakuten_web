@@ -43,12 +43,18 @@ load 'deploy/assets'
 task :setup_shared_dirs, :roles => :app do
   run "#{try_sudo} mkdir -p -m 755 #{shared_path}/db"
   run "#{try_sudo} mkdir -p -m 755 #{shared_path}/config"
+  run "#{try_sudo} mkdir -p -m 755 #{shared_path}/config/initializers"
   run "#{try_sudo} mkdir -p -m 755 #{shared_path}/public/ckeditor"
+  puts "\n\e[0;31m NOTE! \e[0m\n"
+  puts "Make sure to create configuration files:"
+  puts "  1. #{shared_path}/config/config.yml"
+  puts "  2. #{shared_path}/config/initializers/secret_token.rb"
 end
 after "deploy:setup", "setup_shared_dirs"
 
 task :create_symlinks_to_shared_dirs, :roles => :app do
   run "#{try_sudo} ln -nfs #{shared_path}/config/config.yml #{release_path}/config/config.yml"
+  run "#{try_sudo} ln -nfs #{shared_path}/config/initializers/secret_token.rb #{release_path}/config/initializers/secret_token.rb"
   run "#{try_sudo} ln -nfs #{shared_path}/public/ckeditor #{release_path}/public/ckeditor"
 end
 after "deploy:assets:symlink", "create_symlinks_to_shared_dirs"
