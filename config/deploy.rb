@@ -40,15 +40,15 @@ end
 require 'bundler/capistrano'
 load 'deploy/assets'
 
-task :setup_symlink_dirs, :roles => :app do
+task :setup_shared_dirs, :roles => :app do
   run "#{try_sudo} mkdir -p -m 755 #{shared_path}/db"
   run "#{try_sudo} mkdir -p -m 755 #{shared_path}/config"
   run "#{try_sudo} mkdir -p -m 755 #{shared_path}/public/ckeditor"
 end
-after "deploy:setup", "setup_symlink_dirs"
+after "deploy:setup", "setup_shared_dirs"
 
-task :make_symlinks, :roles => :app do
+task :create_symlinks_to_shared_dirs, :roles => :app do
   run "#{try_sudo} ln -nfs #{shared_path}/config/config.yml #{release_path}/config/config.yml"
   run "#{try_sudo} ln -nfs #{shared_path}/public/ckeditor #{release_path}/public/ckeditor"
 end
-after "deploy", "make_symlinks"
+after "deploy:create_symlink", "create_symlinks_to_shared_dirs"
