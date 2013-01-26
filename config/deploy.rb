@@ -51,4 +51,4 @@ task :create_symlinks_to_shared_dirs, :roles => :app do
   run "#{try_sudo} ln -nfs #{shared_path}/config/config.yml #{release_path}/config/config.yml"
   run "#{try_sudo} ln -nfs #{shared_path}/public/ckeditor #{release_path}/public/ckeditor"
 end
-after "deploy:create_symlink", "create_symlinks_to_shared_dirs"
+after "deploy:assets:symlink", "create_symlinks_to_shared_dirs"
