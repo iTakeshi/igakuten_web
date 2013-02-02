@@ -116,34 +116,71 @@
   }
 }
 
-$side-width: 200px;
-$side-margin: 20px;
 #main {
-  z-index: 0;
+  padding: 20px 0 0;
 
   #contents {
+    display: block;
     float: left;
+    width: 700px;
+    margin: 0 20px 0 0;
+    padding: 0;
 
     h1 {
-      margin: 20px 0 0 0;
-      border-bottom: #666 3px solid;
-      text-align: right;
-      font-size: 32px;
+      margin: 0 0 20px;
+      padding: 0;
+      font-size: 28px;
+      line-height: 32px;
+    }
 
-      &:first-child {
-        margin-top: 0;
+    section {
+      margin: 0 0 20px;
+      padding: 0;
+
+      &:last-child {
+        margin: 0;
       }
 
-      & + p {
-        margin-bottom: 20px;
+      p {
+        margin: 0 0 5px;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        padding: 0;
+        font-size: 24px;
+        line-height: 28px;
+
+        & + p {
+          margin: 0 0 20px;
+        }
+      }
+
+      article {
+        margin: 0 0 20px;
+        padding: 0;
+
+        &:last-child {
+          margin: 0;
+        }
+
+        h3 {
+          margin: 0 0 10px;
+          padding: 0;
+          font-size: 20px;
+        }
       }
     }
   }
 
   #side {
+    display: block;
     float: right;
-    width: $side-width;
-    margin-right: $side-margin;
+    width: 220px;
 
     nav {
       width: inherit;
@@ -156,6 +193,8 @@ $side-margin: 20px;
       a {
         display: block;
         height: 30px;
+        margin: 0;
+        padding: 0;
         color: #333;
         text-decoration: none;
 
@@ -169,18 +208,14 @@ $side-margin: 20px;
         list-style: none;
         margin: 0;
         padding: 0;
-        border: #aaa 1px solid;
-        border-radius: 10px;
 
         & > li {
+          margin: 0;
+          padding: 0;
           border-bottom: #aaa 1px double;
 
           &:last-child {
             border-bottom: none;
-          }
-
-          & > a {
-            padding-left: 20px;
           }
 
           & > ul {
