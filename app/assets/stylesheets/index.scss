@@ -1,9 +1,12 @@
 #index-content {
+  margin: 0;
+  padding: 0;
+
   #welcome {
     position: relative;
     width: 640px;
     height: 480px;
-    margin: 15px auto;
+    margin: 20px auto;
 
     #loading {
       display: block;
@@ -20,7 +23,7 @@
 
   #index-left {
     float: left;
-    width: 520px;
+    width: 580px;
     margin: 0 20px 0 0;
     padding: 0;
 
@@ -30,5 +33,13 @@
     #blog-updates {
       width: 300px;
     }
+  }
+
+  #twitter {
+    float: right;
+    width: 340px;
+    height: 600px;
+    margin: 0;
+    padding: 0;
   }
 }
