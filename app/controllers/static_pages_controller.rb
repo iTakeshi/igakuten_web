@@ -17,4 +17,22 @@ class StaticPagesController < ApplicationController
     @top_page = true
     @blog_updates = BlogEntry.includes(:blog_author).order('created_at DESC').limit(5)
   end
+
+  def greetings
+  end
+
+  def about
+  end
+
+  def contents
+  end
+
+  def recture
+  end
+
+  def events
+  end
+
+  def cooperators
+  end
 end

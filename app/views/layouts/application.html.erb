@@ -27,13 +27,14 @@
 
           <nav>
             <ul>
-              <li><a href="" class="<%= @top_page ? 'current' : '' %>"><span>ホーム</span></a></li>
-              <li><a href="" class="<%= @_page ? 'current' : '' %>"><span>ごあいさつ</span></a></li>
-              <li><a href="" class="<%= @_page ? 'current' : '' %>"><span>医学展について</span></a></li>
-              <li><a href="" class="<%= @_page ? 'current' : '' %>"><span>部門紹介</span></a></li>
-              <li><a href="" class="<%= @_page ? 'current' : '' %>"><span>イベント案内</span></a></li>
-              <li><a href="" class="<%= @_page ? 'current' : '' %>"><span>提携団体</span></a></li>
-              <li><a href="" class="<%= @_page ? 'current' : '' %>"><span>アクセス</span></a></li>
+              <li><a href="/" class="<%= @top_page ? 'current' : '' %>"><span>ホーム</span></a></li>
+              <li><a href="/greetings" class="<%= @_page ? 'current' : '' %>"><span>ごあいさつ</span></a></li>
+              <li><a href="/about" class="<%= @_page ? 'current' : '' %>"><span>医学展について</span></a></li>
+              <li><a href="/contents" class="<%= @_page ? 'current' : '' %>"><span>部門紹介</span></a></li>
+              <li><a href="/recture" class="<%= @_page ? 'current' : '' %>"><span>講演会</span></a></li>
+              <li><a href="/events" class="<%= @_page ? 'current' : '' %>"><span>イベント</span></a></li>
+              <li><a href="/cooperators" class="<%= @_page ? 'current' : '' %>"><span>提携団体</span></a></li>
+              <li><a href="/blog" class="<%= @_page ? 'current' : '' %>"><span>スタッフブログ</span></a></li>
               <li id="site-search">
                 <form method="GET" action="http://www.google.co.jp/search">
                   <input type="hidden" name="hl" value="ja">
@@ -118,7 +119,7 @@
                     <li>臨床講義棟大講義室</li>
                     <li>医学部管理棟前ロータリー</li>
                   </ul>
-                  部門ごとのタイムテーブルと実施場所は <a href="/contents#timetable">こちら</a>
+                  企画ごとのタイムテーブルと実施場所は <a href="/contents#timetable">こちら</a>
                 </dd>
                 <br class="clearfix">
                 <dt>お問い合わせ</dt>
