@@ -203,7 +203,7 @@ $side-margin: 20px;
 }
 
 #footer {
-  $footer-color: #888;
+  $footer-color: #555;
   margin: 0 0 20px;
   padding: 0;
   color: $footer-color;
@@ -214,19 +214,83 @@ $side-margin: 20px;
   a:hover,
   a:active {
     color: $footer-color;
+    text-decoration: none;
   }
 
-  nav {
+  #footer-contents {
     margin: 0 0 20px;
 
-    .footer-nav-column {
-      display: block;
+    h1 {
+      margin: 0 0 20px;
+      padding: 0 0 3px;
+      font-size: 20px;
+      border-bottom: 1px solid #555;
+    }
+
+    nav {
+      width: 520px;
       float: left;
       margin: 0 20px 0 0;
-      width: 220px;
 
-      &:last-child {
-        margin: 0
+      .footer-nav-column {
+        display: block;
+        float: left;
+        margin: 0 20px 0 0;
+        width: 160px;
+
+        &:last-child {
+          margin: 0;
+        }
+
+        div {
+          margin: 0 0 20px;
+
+          &:last-child {
+            margin: 0;
+          }
+
+          h2 {
+            padding: 0 0 2px;
+            font-size: 16px;
+            border-bottom: 1px solid #555;
+          }
+        }
+      }
+    }
+
+    #footer-info {
+      float: right;
+      width: 400px;
+
+      dl {
+        dt {
+          display: block;
+          float: left;
+          width: 100px;
+          margin: 0 20px 0 0;
+          padding: 0;
+          text-align: right;
+        }
+
+        dd {
+          display: block;
+          float: right;
+          width: 280px;
+          margin: 0 0 20px;
+          padding: 0;
+
+          &:last-child {
+            margin: 0;
+          }
+
+          a,
+          a:link,
+          a:visited,
+          a:hover,
+          a:active {
+            text-decoration: underline;
+          }
+        }
       }
     }
   }
