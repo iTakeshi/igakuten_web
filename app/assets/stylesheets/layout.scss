@@ -1,6 +1,5 @@
 $wrapper-width: 840px;
-$wrapper-margin: 60px;
-$background-color: #ccffcc;
+$wrapper-margin: 70px;
 
 .wrapper-bg {
   width: $wrapper-width + $wrapper-margin * 2;
@@ -15,14 +14,8 @@ $background-color: #ccffcc;
   padding: 0;
 }
 
-body {
-  background: $background-color;
-}
-
 #header {
   height: 90px;
-  background: image-url('header-bg.png');
-  background-repeat: repeat-x;
 
   #banner {
     position: relative;
@@ -125,7 +118,7 @@ $side-margin: 20px;
   z-index: 0;
 
   .wrapper {
-    padding: 15px 0;
+    padding: 20px 0;
   }
 
   #side {
@@ -211,10 +204,13 @@ $side-margin: 20px;
 }
 
 #footer {
+  margin: 0;
+  padding: 20px 0;
+  color: #888;
+
   address {
     margin: 0;
-    padding: 15px 0 15px 0;
-    border-top: #ddd 1px solid;
+    padding: 0;
     text-align: center;
     font-style: normal;
   }
