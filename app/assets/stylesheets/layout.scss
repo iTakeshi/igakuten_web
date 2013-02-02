@@ -204,9 +204,25 @@ $side-margin: 20px;
 }
 
 #footer {
+  $footer-color: #888;
   margin: 0;
   padding: 20px 0;
-  color: #888;
+  color: $footer-color;
+
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: $footer-color;
+  }
+
+  .footer-nav-column {
+    display: block;
+    float: left;
+    width: 210px;
+
+  }
 
   address {
     margin: 0;
