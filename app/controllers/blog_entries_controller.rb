@@ -7,6 +7,8 @@ class BlogEntriesController < ApplicationController
   # GET /blog_entries.json
   def index
     @blog_entries = BlogEntry.page params[:page]
+    @page_title = "スタッフブログ"
+
     if request.path.include? "blog_entries"
       @admin = true
     else
@@ -24,6 +26,8 @@ class BlogEntriesController < ApplicationController
   # GET /blog_entries/1.json
   def show
     @blog_entry = BlogEntry.find(params[:id])
+    @page_title = @blog_entry.title
+
     if request.path.include? "blog_entries"
       @admin = true
     else

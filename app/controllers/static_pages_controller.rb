@@ -1,3 +1,5 @@
+# coding: utf-8
+
 # Blog周りに関係のない、静的なページはこのcontrollerに空メソッドとして定義してください。
 # メソッド名がそのままURLに反映されます。
 #
@@ -19,20 +21,26 @@ class StaticPagesController < ApplicationController
   end
 
   def greetings
+    @page_title = "ごあいさつ"
   end
 
   def about
+    @page_title = "医学展について"
   end
 
   def contents
+    @page_title = "企画紹介"
   end
 
   def recture
+    @page_title = "講演会"
   end
 
   def events
+    @page_title = "イベント"
   end
 
   def cooperators
+    @page_title = "提携団体"
   end
 end
