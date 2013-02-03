@@ -1,3 +1,2 @@
 <%= render partial: 'blog_entry', locals: { blog_entry: @blog_entry } %>
-
-<%= link_to 'Blog Top', blog_entries_path %>
+<div class="fb-comments" data-href="http://hokudai-igakuten.org/blog/<%= @blog_entry.id %>" data-width="640" data-num-posts="3"></div>

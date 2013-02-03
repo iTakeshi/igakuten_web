@@ -28,3 +28,15 @@ a {
   padding: 0;
   clear: both;
 }
+
+// Hack for Facebook comment box
+.fb-comments {
+  margin: 0 0 -9px;
+  padding: 0;
+
+  & > span {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
