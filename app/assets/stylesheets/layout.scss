@@ -119,48 +119,25 @@
 #main {
   padding: 20px 0 0;
 
-  #contents {
-    display: block;
-    float: left;
-    width: 700px;
-    margin: 0 20px 0 0;
+  #contents-wrapper {
+    margin: 0;
     padding: 0;
 
-    h1 {
-      margin: 0 0 20px;
-      padding: 0;
-      font-size: 28px;
-      line-height: 32px;
-    }
-
-    section {
-      margin: 0 0 20px;
+    #contents {
+      display: block;
+      float: left;
+      width: 700px;
+      margin: 0 20px 0 0;
       padding: 0;
 
-      &:last-child {
-        margin: 0;
-      }
-
-      p {
-        margin: 0 0 5px;
-
-        &:last-child {
-          margin: 0;
-        }
-      }
-
-      h2 {
-        margin: 0 0 10px;
+      h1 {
+        margin: 0 0 20px;
         padding: 0;
-        font-size: 24px;
-        line-height: 28px;
-
-        & + p {
-          margin: 0 0 20px;
-        }
+        font-size: 28px;
+        line-height: 32px;
       }
 
-      article {
+      section {
         margin: 0 0 20px;
         padding: 0;
 
@@ -168,66 +145,94 @@
           margin: 0;
         }
 
-        h3 {
+        p {
+          margin: 0 0 5px;
+
+          &:last-child {
+            margin: 0;
+          }
+        }
+
+        h2 {
           margin: 0 0 10px;
           padding: 0;
-          font-size: 20px;
+          font-size: 24px;
+          line-height: 28px;
+
+          & + p {
+            margin: 0 0 20px;
+          }
+        }
+
+        article {
+          margin: 0 0 20px;
+          padding: 0;
+
+          &:last-child {
+            margin: 0;
+          }
+
+          h3 {
+            margin: 0 0 10px;
+            padding: 0;
+            font-size: 20px;
+          }
         }
       }
     }
-  }
 
-  #side {
-    display: block;
-    float: right;
-    width: 220px;
+    #side {
+      display: block;
+      float: right;
+      width: 220px;
 
-    nav {
-      width: inherit;
+      nav {
+        width: inherit;
 
-      &.stick-to-top {
-        position: fixed;
-        top: 50px;
-      }
-
-      a {
-        display: block;
-        height: 30px;
-        margin: 0;
-        padding: 0;
-        color: #333;
-        text-decoration: none;
-
-        span {
-          line-height: 30px;
-          vertical-align: middle;
+        &.stick-to-top {
+          position: fixed;
+          top: 50px;
         }
-      }
 
-      & > ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-
-        & > li {
+        a {
+          display: block;
+          height: 30px;
           margin: 0;
           padding: 0;
-          border-bottom: #aaa 1px double;
+          color: #333;
+          text-decoration: none;
 
-          &:last-child {
-            border-bottom: none;
+          span {
+            line-height: 30px;
+            vertical-align: middle;
           }
+        }
 
-          & > ul {
-            list-style: none;
+        & > ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          & > li {
             margin: 0;
             padding: 0;
+            border-bottom: #aaa 1px double;
 
-            & > li {
+            &:last-child {
+              border-bottom: none;
+            }
 
-              & > a {
-                padding-right: 20px;
-                text-align: right;
+            & > ul {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+
+              & > li {
+
+                & > a {
+                  padding-right: 20px;
+                  text-align: right;
+                }
               }
             }
           }
