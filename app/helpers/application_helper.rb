@@ -9,7 +9,7 @@ module ApplicationHelper
     if toc[2]
       html_str << "<div class=\"dropdown\"><ul>"
       toc[2].each do |k, v|
-        html_str << "<li><a href=\"/#{toc[1]}##{v}\">#{k}</a></li>"
+        html_str << "<li><a href=\"/#{toc[1]}##{v}\"><span>#{k}</span></a></li>"
       end
       html_str << "</ul></div>"
     end

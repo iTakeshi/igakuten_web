@@ -69,12 +69,8 @@
         padding: 1px 0;
         background: transparent;
 
-        .dropdown {
-          display: none;
-        }
-
-        &:hover .dropdown {
-          display: block;
+        &:hover, &:focus, &.current {
+          background: rgba(255, 225, 225, 0.25);
         }
 
         &#site-search {
@@ -100,7 +96,7 @@
           }
         }
 
-        a {
+        & > a {
           display: block;
           height: 28px;
           margin: 0;
@@ -108,7 +104,6 @@
           background: transparent;
 
           &:hover, &:focus, &.current {
-            background: rgba(255, 225, 225, 0.25);
             outline: none;
           }
 
@@ -117,6 +112,51 @@
             line-height: 28px;
             color: #fff;
             text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
+          }
+        }
+
+        .dropdown {
+          display: none;
+        }
+
+        &:hover .dropdown {
+          display: block;
+          position: absolute;
+          top: 30px; left: 0;
+          width: 150px;
+          border-radius: 0 0 8px 8px;
+          border: #aaa 1px solid;
+          border-top: none;
+          background: #ffffff;
+          z-index: 100;
+
+          ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+              margin: 0;
+              padding: 0;
+
+              a {
+                display: block;
+                margin: 0;
+                padding: 0 10px;
+                height: 30px;
+
+                &:last-child {
+                  border-radius: 0 0 8px 8px;
+                }
+
+                &:hover {
+                  background: $background + #181818;
+                }
+
+                span {
+                  line-height: 30px;
+                }
+              }
+            }
           }
         }
       }
