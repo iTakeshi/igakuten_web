@@ -31,9 +31,9 @@
               <li><a href="/greetings" class="<%= @greetings_page ? 'current' : '' %>"><span>ごあいさつ</span></a></li>
               <li><a href="/about" class="<%= @about_page ? 'current' : '' %>"><span>医学展について</span></a></li>
               <li><a href="/contents" class="<%= @contents_page ? 'current' : '' %>"><span>企画紹介</span></a></li>
+              <li><a href="/cooperators" class="<%= @cooperators_page ? 'current' : '' %>"><span>提携団体</span></a></li>
               <li><a href="/recture" class="<%= @recture_page ? 'current' : '' %>"><span>講演会</span></a></li>
               <li><a href="/events" class="<%= @events_page ? 'current' : '' %>"><span>イベント</span></a></li>
-              <li><a href="/cooperators" class="<%= @cooperators_page ? 'current' : '' %>"><span>提携団体</span></a></li>
               <li><a href="/blog" class="<%= @blog_page ? 'current' : '' %>"><span>スタッフブログ</span></a></li>
               <li><a href="/access" class="<%= @access_page ? 'current' : '' %>"><span>アクセス</span></a></li>
               <li id="site-search">
@@ -81,9 +81,9 @@
                 [ 'ごあいさつ',     '/greetings',   { '医学研究科長より' => 'dean', '実行委員長より' => 'chairperson' } ],
                 [ '医学展とは',     '/about',       { '医学展とは' => 'summary', '今年のテーマ' => 'theme', '歴史' => 'history', '写真ギャラリー' => 'gallery', '協賛団体' => 'sponsors' } ],
                 [ '企画紹介',       '/contents',    { '検査体験' => 'checkup', '科学体験' => 'science', 'ハンディキャップ体験' => 'handicap', '展示' => 'exhibition', '救急' => 'emergency' } ],
+                [ '提携団体',       '/cooperators', { 'IFMSA' => 'ifmsa', 'PCAF&産婦人科' => 'pcaf', '国際連携室' => 'international', '部活出店' => 'stalls' } ],
                 [ '講演会',         '/recture',     { '演題' => 'title', '講演者' => 'profile' } ],
                 [ 'イベント',       '/events',      { '救急車' => 'ambulance', '盲導犬' => 'guidedog' } ],
-                [ '提携団体',       '/cooperators', { 'IFMSA' => 'ifmsa', 'PCAF&産婦人科' => 'pcaf', '国際連携室' => 'international', '部活出店' => 'stalls' } ],
                 [ 'スタッフブログ', '/blog'],
                 [ 'アクセス', '/access', { '医学展マップ' => 'map', 'タイムテーブル' => 'timetable' } ]
               ] %>
@@ -97,9 +97,9 @@
               <div class="footer-nav-column">
                 <%= footer_nav toc[3] %>
                 <%= footer_nav toc[4] %>
-                <%= footer_nav toc[5] %>
               </div>
               <div class="footer-nav-column">
+                <%= footer_nav toc[5] %>
                 <%= footer_nav toc[6] %>
                 <%= footer_nav toc[7] %>
                 <%= footer_nav toc[8] %>
