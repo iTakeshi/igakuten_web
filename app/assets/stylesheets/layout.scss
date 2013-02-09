@@ -55,19 +55,27 @@
       top: 0;
     }
 
-    ul {
+    & > ul {
       margin: 0 20px;
       padding: 0;
       height: 30px;
       list-style: none;
 
-      li {
+      & > li {
         position: relative;
         float: left;
         height: 30px;
         margin: 0;
         padding: 1px 0;
         background: transparent;
+
+        .dropdown {
+          display: none;
+        }
+
+        &:hover .dropdown {
+          display: block;
+        }
 
         &#site-search {
           float: right;

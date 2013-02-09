@@ -2,8 +2,18 @@ module ApplicationHelper
 
   def header_nav(toc, current_page)
     html_str = "<li><a href=\"/#{toc[1]}\""
-    html_str << " class=\"current\"" if current_page == toc[1]
-    html_str << "><span>#{toc[0]}</span></a></li>"
+    if current_page == toc[1]
+      html_str << " class=\"current\""
+    end
+    html_str << "><span>#{toc[0]}</span></a>"
+    if toc[2]
+      html_str << "<div class=\"dropdown\"><ul>"
+      toc[2].each do |k, v|
+        html_str << "<li><a href=\"/#{toc[1]}##{v}\">#{k}</a></li>"
+      end
+      html_str << "</ul></div>"
+    end
+    html_str << "</li>"
     return html_str.html_safe
   end
 
