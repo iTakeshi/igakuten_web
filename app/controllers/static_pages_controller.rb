@@ -16,42 +16,42 @@ class StaticPagesController < ApplicationController
 #  skip_before_filter :authenticate
 
   def index
-    @top_page = true
     @blog_updates = BlogEntry.includes(:blog_author).order('created_at DESC').limit(5)
+    @current_page = ''
   end
 
   def greetings
     @page_title = "ごあいさつ"
-    @greetings_page = true
+    @current_page = 'greetings'
   end
 
   def about
     @page_title = "医学展について"
-    @about_page = true
+    @current_page = 'about'
   end
 
   def contents
     @page_title = "企画紹介"
-    @contents_page = true
+    @current_page = 'contents'
   end
 
   def recture
     @page_title = "講演会"
-    @recture_page = true
+    @current_page = 'recture'
   end
 
   def events
     @page_title = "イベント"
-    @events_page = true
+    @current_page = 'events'
   end
 
   def cooperators
     @page_title = "提携団体"
-    @cooperators_page = true
+    @current_page = 'cooperators'
   end
 
   def access
     @page_title = "アクセス"
-    @access_page = true
+    @current_page = 'access'
   end
 end

@@ -1,5 +1,12 @@
 module ApplicationHelper
 
+  def header_nav(toc, current_page)
+    html_str = "<li><a href=\"/#{toc[1]}\""
+    html_str << " class=\"current\"" if current_page == toc[1]
+    html_str << "><span>#{toc[0]}</span></a></li>"
+    return html_str.html_safe
+  end
+
   def footer_nav(toc)
     html_str = "<div><h2><a href=\"/#{toc[1]}\">#{toc[0]}</a></h2><ul>"
     if toc[2]

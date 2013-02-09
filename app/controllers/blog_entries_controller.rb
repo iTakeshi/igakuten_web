@@ -8,7 +8,7 @@ class BlogEntriesController < ApplicationController
   def index
     @blog_entries = BlogEntry.page params[:page]
     @page_title = "スタッフブログ"
-    @blog_page = true
+    @current_page = 'blog'
 
     if request.path.include? "blog_entries"
       @admin = true
@@ -28,7 +28,7 @@ class BlogEntriesController < ApplicationController
   def show
     @blog_entry = BlogEntry.find(params[:id])
     @page_title = @blog_entry.title
-    @blog_page = true
+    @current_page = 'blog'
 
     if request.path.include? "blog_entries"
       @admin = true
