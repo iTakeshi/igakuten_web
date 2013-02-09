@@ -9,6 +9,18 @@
     <%= csrf_meta_tags %>
   </head>
 
+  <% toc = [
+    [ 'ホーム',         '' ],
+    [ 'ごあいさつ',     'greetings',   { '医学研究科長より' => 'dean', '実行委員長より' => 'chairperson' } ],
+    [ '医学展とは',     'about',       { '医学展とは' => 'summary', '今年のテーマ' => 'theme', '歴史' => 'history', '写真ギャラリー' => 'gallery', '協賛団体' => 'sponsors' } ],
+    [ '企画紹介',       'contents',    { '検査体験' => 'checkup', '科学体験' => 'science', 'ハンディキャップ体験' => 'handicap', '展示' => 'exhibition', '救急' => 'emergency' } ],
+    [ '提携団体',       'cooperators', { 'IFMSA' => 'ifmsa', 'PCAF&産婦人科' => 'pcaf', '国際連携室' => 'international', '部活出店' => 'stalls' } ],
+    [ '講演会',         'recture',     { '演題' => 'title', '講演者' => 'profile' } ],
+    [ 'イベント',       'events',      { '救急車' => 'ambulance', '盲導犬' => 'guidedog' } ],
+    [ 'スタッフブログ', 'blog'],
+    [ 'アクセス',       'access',      { '医学展マップ' => 'map', 'タイムテーブル' => 'timetable' } ]
+  ] %>
+
   <body>
     <div id="global-wrapper">
 
@@ -76,18 +88,6 @@
 
           <div id="footer-contents">
             <nav>
-              <% toc = [
-                [ 'ホーム',         '/' ],
-                [ 'ごあいさつ',     '/greetings',   { '医学研究科長より' => 'dean', '実行委員長より' => 'chairperson' } ],
-                [ '医学展とは',     '/about',       { '医学展とは' => 'summary', '今年のテーマ' => 'theme', '歴史' => 'history', '写真ギャラリー' => 'gallery', '協賛団体' => 'sponsors' } ],
-                [ '企画紹介',       '/contents',    { '検査体験' => 'checkup', '科学体験' => 'science', 'ハンディキャップ体験' => 'handicap', '展示' => 'exhibition', '救急' => 'emergency' } ],
-                [ '提携団体',       '/cooperators', { 'IFMSA' => 'ifmsa', 'PCAF&産婦人科' => 'pcaf', '国際連携室' => 'international', '部活出店' => 'stalls' } ],
-                [ '講演会',         '/recture',     { '演題' => 'title', '講演者' => 'profile' } ],
-                [ 'イベント',       '/events',      { '救急車' => 'ambulance', '盲導犬' => 'guidedog' } ],
-                [ 'スタッフブログ', '/blog'],
-                [ 'アクセス', '/access', { '医学展マップ' => 'map', 'タイムテーブル' => 'timetable' } ]
-              ] %>
-
               <h1>サイトマップ</h1>
               <div class="footer-nav-column">
                 <%= footer_nav toc[0] %>
