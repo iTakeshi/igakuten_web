@@ -22,25 +22,36 @@ class StaticPagesController < ApplicationController
 
   def greetings
     @page_title = "ごあいさつ"
+    @greetings_page = true
   end
 
   def about
     @page_title = "医学展について"
+    @about_page = true
   end
 
   def contents
     @page_title = "企画紹介"
+    @contents_page = true
   end
 
   def recture
     @page_title = "講演会"
+    @recture_page = true
   end
 
   def events
     @page_title = "イベント"
+    @events_page = true
   end
 
   def cooperators
     @page_title = "提携団体"
+    @cooperators_page = true
+  end
+
+  def access
+    @page_title = "アクセス"
+    @access_page = true
   end
 end
