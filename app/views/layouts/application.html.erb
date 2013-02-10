@@ -33,13 +33,14 @@
         <div id="header">
 
           <div id="banner">
-            <%= image_tag 'banner.jpg', title: 'banner' %>
+            <%= image_tag 'banner-desktop.jpg', title: 'banner', class: 'only-desktop' %>
+            <%= image_tag 'banner-smartphone-portrait.jpg', title: 'banner', class: 'only-smartphone-portrait' %>
             <h1><a href="/">医学展52</a></h1>
             <a href="/admin" id="link-to-admin">管理者メニュー</a>
           </div>
 
           <nav>
-            <ul>
+            <ul class="except-smartphone-portrait">
               <%= header_nav toc[0], @current_page %>
               <%= header_nav toc[1], @current_page %>
               <%= header_nav toc[2], @current_page %>
@@ -57,6 +58,10 @@
                 </form>
               </li>
             </ul>
+
+            <div id="jump-to-footer" class="only-smartphone-portrait">
+              <a href="#footer"><span>サイトメニュー</span></a>
+            </div>
           </nav>
 
         </div><!-- end of header -->
