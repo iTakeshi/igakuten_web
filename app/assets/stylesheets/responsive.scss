@@ -1,0 +1,51 @@
+/* desktop */
+@media all and (min-width: 1025px) {
+  .only-desktop              { /* visible */ }
+  .only-tablet-landscape     { display: none; }
+  .only-tablet-portrait      { display: none; }
+  .only-smartphone-portrait  { display: none; }
+
+  .except-desktop              { display: none; }
+  .except-tablet-landscape     { /* visible */ }
+  .except-tablet-portrait      { /* visible */ }
+  .except-smartphone-portrait  { /* visible */ }
+}
+
+/* tablet landscape or smartphone landscape */
+@media all and (max-width: 1024px) and (min-width: 769px) {
+  .only-desktop              { display: none; }
+  .only-tablet-landscape     { /* visible */ }
+  .only-tablet-portrait      { display: none; }
+  .only-smartphone-portrait  { display: none; }
+
+  .except-desktop              { /* visible */ }
+  .except-tablet-landscape     { display: none; }
+  .except-tablet-portrait      { /* visible */ }
+  .except-smartphone-portrait  { /* visible */ }
+}
+
+/* tablet portrait */
+@media all and (max-width: 768px) and (min-width: 481px) {
+  .only-desktop              { display: none; }
+  .only-tablet-landscape     { display: none; }
+  .only-tablet-portrait      { /* visible */ }
+  .only-smartphone-portrait  { display: none; }
+
+  .except-desktop              { /* visible */ }
+  .except-tablet-landscape     { /* visible */ }
+  .except-tablet-portrait      { display: none; }
+  .except-smartphone-portrait  { /* visible */ }
+}
+
+/* smartphone portrait */
+@media all and (max-width: 480px) {
+  .only-desktop              { display: none; }
+  .only-tablet-landscape     { display: none; }
+  .only-tablet-portrait      { display: none; }
+  .only-smartphone-portrait  { /* visible */ }
+
+  .except-desktop              { /* visible */ }
+  .except-tablet-landscape     { /* visible */ }
+  .except-tablet-portrait      { /* visible */ }
+  .except-smartphone-portrait  { display: none; }
+}
