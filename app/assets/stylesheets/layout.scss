@@ -402,6 +402,11 @@
   #global-wrapper {
     width: 100%;
 
+    .wrapper {
+      width: auto;
+      margin: 0 10px;
+    }
+
     #background {
       width: auto;
       margin: 9px;
@@ -442,6 +447,14 @@
               }
             }
           }
+        }
+      }
+
+      #main {
+        padding: 10px 0;
+
+        #contents-wrapper {
+          width: 100%;
         }
       }
     }
