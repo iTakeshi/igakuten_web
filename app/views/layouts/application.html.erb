@@ -71,9 +71,11 @@
         <div id="main">
           <div class="wrapper">
 
-            <div id="notice">
-              <%= flash[:notice] %>
-            </div>
+            <% if flash[:notice] %>
+              <div id="notice">
+                <%= flash[:notice] %>
+              </div>
+            <% end %>
 
             <div id="contents-wrapper">
               <%= yield %>
