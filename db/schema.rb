@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130104063244) do
+ActiveRecord::Schema.define(:version => 20130211063141) do
+
+  create_table "access_counters", :force => true do |t|
+    t.string   "page_name",  :null => false
+    t.integer  "counter",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "access_counters", ["page_name"], :name => "index_access_counters_on_page_name", :unique => true
 
   create_table "blog_authors", :force => true do |t|
     t.string   "name",       :null => false
