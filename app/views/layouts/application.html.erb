@@ -141,7 +141,9 @@
                   igakuten52 at gmail.com<br>
                   at を半角の @ に変換してお使いください。
                 </dd>
+                <br class="clearfix">
               </dl>
+              <h1 id="access-counter">あなたは<%= AccessCounter.where(page_name: 'overall').first.counter.to_i %>人目の訪問者です。</h1>
             </div>
 
             <span class="clearfix">
