@@ -1,2 +1,78 @@
-<div class="fb-like" data-href="http://hokudai-igakuten.org/access" data-send="false" data-width="640" data-show-faces="true"></div>
-<div class="fb-comments" data-href="http://hokudai-igakuten.org/access" data-width="640" data-num-posts="3"></div>
+<style type="text/css">
+  #hokudai ul {
+    margin: 0 0 10px;
+  }
+
+  #hokudai ul li {
+    margin: 0 0 10px;
+  }
+
+  #hokudai ul li span {
+    font-weight: bold;
+  }
+
+  #hokudai ul li dl {
+    margin: 0 0 0 10px;
+  }
+
+  #hokudai ul li dl dt {
+    display: inline-block;
+    width: 80px;
+  }
+
+  #hokudai ul li dl dd {
+    display: inline-block;
+  }
+</style>
+
+<div id="contents">
+  <h1>アクセス・タイムテーブル</h1>
+
+  <section id="hokudai">
+    <h2>北大へのアクセス</h2>
+    <%= image_tag 'hokudai_access.gif', style: 'display: block; float: left; margin: 0 20px 0 0; border: 1px solid #ddd;' %>
+    <div style="width: 190px; float: right;">
+      <ul>
+        <li><span>JR線</span>
+          <dl>
+            <dt>札幌駅</dt><dd>徒歩約20分</dd>
+          </dl>
+        </li>
+        <li><span>地下鉄南北線</span>
+          <dl>
+            <dt>北12条駅</dt><dd>徒歩約10分</dd>
+            <dt>北18条駅</dt><dd>徒歩約10分</dd>
+          </dl>
+        </li>
+        <li><span>地下鉄東豊線</span>
+          <dl>
+            <dt>北13条東駅</dt><dd>徒歩約15分</dd>
+          </dl>
+        </li>
+      </ul>
+      <p>医学展会場へは、北13条門から入り、メインストリートを右折してください。</p>
+    </div>
+    <span class="clearfix"></span>
+  </section>
+
+  <section id="map">
+    <h2>会場内マップ</h2>
+  </section>
+
+  <section id="timetable">
+    <h2>タイムテーブル</h2>
+  </section>
+
+  <div class="fb-like" data-href="http://hokudai-igakuten.org/access" data-send="false" data-width="640" data-show-faces="true"></div>
+  <div class="fb-comments" data-href="http://hokudai-igakuten.org/access" data-width="640" data-num-posts="3"></div>
+</div>
+
+<div id="side">
+  <nav>
+    <ul>
+      <li><a href="#hokudai"><span>北大へのアクセス</span></a></li>
+      <li><a href="#map"><span>会場内マップ</span></a></li>
+      <li><a href="#timetable"><span>タイムテーブル</span></a></li>
+    </ul>
+  </nav>
+</div>
