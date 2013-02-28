@@ -4,11 +4,11 @@
       <h2><%= @blog_entry.errors.count %>個の項目にエラーがあります。</h2>
 
       <ul>
-      <% @blog_entry.errors.messages.each do |msg| %>
-        <% msg[1].each do |str| %>
-          <li><%= str %></li>
+        <% @blog_entry.errors.messages.each do |msg| %>
+          <% msg[1].each do |str| %>
+            <li><%= str %></li>
+          <% end %>
         <% end %>
-      <% end %>
       </ul>
     </div>
   <% end %>
@@ -24,19 +24,24 @@
   </div>
   <div class="field">
     <%= f.label :unsafe_html, '本文' %><br>
-    <%= f.cktext_area :unsafe_html,
-      language: 'ja',
-      toolbar: [
-        [ 'Source' ], 
-        [ 'Bold', 'Italic', 'Underline', 'Strike', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Image', 'Table', 'HorizontalRule', 'Smiley' ],
-        [ 'Format' ]
-      ],
-      format_tags: 'p;h1;h2;pre',
-      forcePasteAsPlainText: true,
-      width: 800,
-      height: 400
-    %>
+    <%= f.text_area :unsafe_html %>
+    <script type="text/javascript">
+      CKEDITOR.replace('blog_entry_unsafe_html', {
+        customConfig: '',
+        language: 'ja',
+        toolbar:  [
+          [ 'Source' ],
+          [ 'Bold', 'Italic', 'Underline', 'Strike', '-', 'BulletedList', 'Link', 'Image', 'HorizontalRule', 'Smiley' ],
+          [ 'Format' ]
+        ],
+        format_tags: 'p;h1;h2',
+        forcePasteAsPlainText: true,
+        width: 800,
+        height: 400
+      });
+    </script>
   </div>
+
   <div class="actions">
     <%= f.submit '投稿' %>
   </div>
