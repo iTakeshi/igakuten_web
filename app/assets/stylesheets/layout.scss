@@ -273,6 +273,7 @@
       width: 520px;
       float: left;
       margin: 0 20px 0 0;
+      line-height: 20px;
 
       .footer-nav-column {
         display: block;
@@ -285,15 +286,17 @@
         }
 
         div {
-          margin: 0 0 20px;
+          margin: 0 0 10px;
 
           &:last-child {
             margin: 0;
           }
 
           h2 {
-            padding: 0 0 2px;
+            margin: 0 0 10px;
+            padding: 0;
             font-size: 16px;
+            line-height: 29px;
             border-bottom: 1px solid #555;
           }
         }
@@ -334,13 +337,11 @@
           }
         }
       }
-
-      h1#access-counter {
-        border: none;
-        font-size: 16px;
-        text-align: right;
-      }
     }
+  }
+
+  #access-counter {
+    text-align: center;
   }
 
   address {

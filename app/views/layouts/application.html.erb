@@ -11,13 +11,12 @@
 
   <% toc = [
     [ 'ホーム',         '' ],
-    [ 'ごあいさつ',     'greetings',   { '医学研究科長より' => 'dean', '実行委員長より' => 'chairperson' } ],
-    [ '医学展とは',     'about',       { '医学展とは' => 'summary', '今年のテーマ' => 'theme', '歴史' => 'history', '写真ギャラリー' => 'gallery', '協賛団体' => 'sponsors' } ],
+    [ '医学展とは',     'about',       { '医学展とは' => 'summary', '今年のテーマ' => 'theme', '医学展実行委員会とは' => 'aboutus', '写真ギャラリー' => 'gallery' } ],
+    [ 'スタッフブログ', 'blog'],
     [ '企画紹介',       'contents',    { '検査体験' => 'checkup', '科学体験' => 'science', 'ハンディキャップ体験' => 'handicap', '展示' => 'exhibition', '救急' => 'emergency' } ],
     [ '講演会',         'recture'],
     [ 'イベント',       'events',      { '救急車' => 'ambulance', '盲導犬' => 'guidedog' } ],
-    [ '提携団体',       'cooperators', { 'IFMSA' => 'ifmsa', 'PCAF&産婦人科' => 'pcaf', '国際連携室' => 'international', '部活出店' => 'stalls' } ],
-    [ 'スタッフブログ', 'blog'],
+    [ '提携団体',       'cooperators' ],
     [ 'アクセス',       'access',      { '北大へのアクセス' => 'hokudai', '会場内マップ' => 'map', 'タイムテーブル' => 'timetable' } ]
   ] %>
 
@@ -49,7 +48,6 @@
               <%= header_nav toc[5], @current_page %>
               <%= header_nav toc[6], @current_page %>
               <%= header_nav toc[7], @current_page %>
-              <%= header_nav toc[8], @current_page %>
               <li id="site-search">
                 <form method="GET" action="http://www.google.co.jp/search">
                   <input type="hidden" name="hl" value="ja">
@@ -105,12 +103,11 @@
               <div class="footer-nav-column">
                 <%= footer_nav toc[3] %>
                 <%= footer_nav toc[4] %>
-                <%= footer_nav toc[5] %>
               </div>
               <div class="footer-nav-column">
+                <%= footer_nav toc[5] %>
                 <%= footer_nav toc[6] %>
                 <%= footer_nav toc[7] %>
-                <%= footer_nav toc[8] %>
               </div>
             </nav>
 
@@ -143,12 +140,12 @@
                 </dd>
                 <br class="clearfix">
               </dl>
-              <h1 id="access-counter">あなたは<%= AccessCounter.where(page_name: 'overall').first.counter.to_i %>人目の訪問者です。</h1>
             </div>
 
             <span class="clearfix">
           </div>
 
+          <div id="access-counter">あなたは<%= AccessCounter.where(page_name: 'overall').first.counter.to_i %>人目の訪問者です。</div>
           <address>2012-2013 Hokkaido Univ. Igakuten Executive Comittee, all right reserved.</address>
         </div>
 
