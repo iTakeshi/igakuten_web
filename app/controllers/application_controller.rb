@@ -10,9 +10,9 @@ class ApplicationController < ActionController::Base
   end
 
   def increment_access_counter
+    return false if cookies[:access_counter]
     overall_record = AccessCounter.where(page_name: 'overall').first
     AccessCounter.increment_counter(:counter, overall_record.id)
-    page_record = AccessCounter.where(page_name: request.path).first_or_create { |r| r.counter = 0 }
-    AccessCounter.increment_counter(:counter, page_record.id)
+    cookies[:access_counter] = { value: true }
   end
 end
