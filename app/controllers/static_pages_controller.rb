@@ -20,11 +20,6 @@ class StaticPagesController < ApplicationController
     @current_page = ''
   end
 
-  def greetings
-    @page_title = "ごあいさつ"
-    @current_page = 'greetings'
-  end
-
   def about
     @page_title = "医学展について"
     @current_page = 'about'
