@@ -35,3 +35,5 @@ welcome_animation = ->
       $('#campus').delay(interval * 1).queue -> $(@).css('background-position', '-' + 12 * width + 'px 0').dequeue()
       $('#campus').delay(interval * 1).queue -> $(@).css('background-position', '-' + 13 * width + 'px 0').dequeue()
       $('#campus').delay(interval * 1).queue -> $(@).css('background-position', '-' + 14 * width + 'px 0').dequeue()
+
+      $('#campus').delay(interval * 2).queue -> $(@).next('#campus-nav').animate { opacity: 'toggle' }, 500

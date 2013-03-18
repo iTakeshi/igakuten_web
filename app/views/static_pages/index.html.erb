@@ -1,107 +1,83 @@
-<style type="text/css">
-  .ballon {
-    position: relative;
-    background: #ddd;
-    height: 50px;
-    width: 400px;
-    margin-bottom: 50px;
-    padding: 20px 40px 20px;
-    border-radius: 50px;
-  }
-
-  .ballon:before {
-    content: '';
-    position: absolute;
-    background: #eee;
-    height: 20px;
-    width: 20px;
-    border-radius: 10px;
-    bottom: -30px;
-    right: 30px;
-  }
-
-  .ballon:after {
-    content: '';
-    position: absolute;
-    background: #eee;
-    height: 10px;
-    width: 10px;
-    border-radius: 5px;
-    bottom: -45px;
-    right: 10px;
-  }
-</style>
-
 <section id="welcome" class="except-smartphone-portrait">
-<%= image_tag 'loading.gif', id: 'loading' %>
-<div id="campus"></div>
+  <%= image_tag 'loading.gif', id: 'loading' %>
+  <div id="campus"></div>
+  <div id="campus-nav">
+    <%= image_tag 'welcome-nav.png', usemap: 'welcome-nav' %>
+    <map name="welcome-nav">
+      <area href="/about" shape="rect" coords="5, 199, 230, 334">
+      <area href="/contents" shape="rect" coords="112, 48, 337, 183">
+      <area href="/recture" shape="rect" coords="357, 3, 582, 138">
+      <area href="/events" shape="rect" coords="600, 48, 825, 183">
+      <area href="/blog" shape="rect" coords="714, 199, 939, 334">
+    </map>
+  </div>
 </section>
 
 <div id="index-right">
   <section id="introduction">
-  <h2>北海道大学医学展へようこそ！</h2>
-  <p>
-  皆様は、医学、あるいは医学生に対して、きっと様々なイメージや疑問をお持ちなのではないでしょうか？<br>
-  例えば…
-  </p>
+    <h2>北海道大学医学展へようこそ！</h2>
+    <p>
+      皆様は、医学、あるいは医学生に対して、きっと様々なイメージや疑問をお持ちなのではないでしょうか？<br>
+      例えば…
+    </p>
 
-  <p class="ballon">
-  <span style="display: inline-block; width: 300px;">お医者さんって検査や診察で何を診てるの…?</span> by小学生<br>
-  <span style="display: inline-block; width: 300px;">医学部ってどんな勉強をしているんだろう!?</span> by受験生<br>
-  <span style="display: inline-block; width: 300px;">医学生って変わってそう!</span> byドラマ好き
-  </p>
+    <p class="ballon">
+      <span style="display: inline-block; width: 300px;">お医者さんって検査や診察で何を診てるの…?</span> by小学生<br>
+      <span style="display: inline-block; width: 300px;">医学部ってどんな勉強をしているんだろう!?</span> by受験生<br>
+      <span style="display: inline-block; width: 300px;">医学生って変わってそう!</span> byドラマ好き
+    </p>
 
-  <p>
-  『医学展』は、体験や展示発表、医学生との交流を通して、楽しみながら医学への関心を深めていただける場を作り出したいという思いと共に毎年開催されています。
-  ぜひ、この機会に医学やそれを学ぶ学生に直接ふれてみてはいかがでしょうか。
-  もしかしたら意外な一面がみえてくるかもしれません!
-  </p>
+    <p>
+      『医学展』は、体験や展示発表、医学生との交流を通して、楽しみながら医学への関心を深めていただける場を作り出したいという思いと共に毎年開催されています。
+      ぜひ、この機会に医学やそれを学ぶ学生に直接ふれてみてはいかがでしょうか。
+      もしかしたら意外な一面がみえてくるかもしれません!
+    </p>
 
-  <p>
-  また、医学展は私たち学生にとっても医師になるという自覚を養い、目指すべき医師像を考える絶好の機会でもあります。
-  私たちに求められているものは何なのか。自ら問いかけ、成長していきたいと思います。
-  </p>
+    <p>
+      また、医学展は私たち学生にとっても医師になるという自覚を養い、目指すべき医師像を考える絶好の機会でもあります。
+      私たちに求められているものは何なのか。自ら問いかけ、成長していきたいと思います。
+    </p>
 
-  <p>
-  <strong style="font-size: 16px; font-weight: bold;">『第52回医学展 ～芽ディカルCASCADE〜』</strong><br>
-  今年も楽しい企画をたくさんご用意してお待ちしております。
-  皆様ぜひぜひ医学展へ遊びに来てください!!
-  </p>
+    <p>
+      <strong style="font-size: 16px; font-weight: bold;">『第52回医学展 ～芽ディカルCASCADE〜』</strong><br>
+      今年も楽しい企画をたくさんご用意してお待ちしております。
+      皆様ぜひぜひ医学展へ遊びに来てください!!
+    </p>
 
-  <p>
-  第52回北海道大学医学展実行委員長<br>
-  北海道大学医学部医学科 4年<br>
-  仙 万梨子
-  </p>
+    <p>
+      第52回北海道大学医学展実行委員長<br>
+      北海道大学医学部医学科 4年<br>
+      仙 万梨子
+    </p>
   </section>
 
   <section id="igakun">
     <h2>公式キャラクター『いがくん』</h2>
     <%= image_tag 'igakun.png', title: 'いがくん' %>
-  </sectio>
+    </sectio>
 
-  <section id="site-updates">
-  <h2>更新情報</h2>
-  <ul>
-    <li><span class="date">2013-03-20</span>サイトを公開しました。</li>
-  </ul>
+    <section id="site-updates">
+      <h2>更新情報</h2>
+      <ul>
+        <li><span class="date">2013-03-20</span>サイトを公開しました。</li>
+      </ul>
+    </section>
+
+    <section id="blog-updates">
+      <h2>スタッフブログ</h2>
+      <ul>
+        <% @blog_updates.each do |blog| %>
+          <li>
+            <span class="date"><%= blog.created_at.strftime("%Y-%m-%d") %></span>
+            「<%= blog.title %>」 by <%= blog.blog_author.name %>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  </div>
+
+  <section id="sns">
+    <div class="fb-like-box" data-href="http://www.facebook.com/hokudai.igakuten" data-width="338" data-show-faces="true" data-stream="false" data-border-color="#fff" data-header="true"></div>
+    <a class="twitter-timeline" width="340" height="600" href="https://twitter.com/igakuten" data-widget-id="289913621562130432">@igakuten からのツイート</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
   </section>
-
-  <section id="blog-updates">
-  <h2>スタッフブログ</h2>
-  <ul>
-    <% @blog_updates.each do |blog| %>
-      <li>
-      <span class="date"><%= blog.created_at.strftime("%Y-%m-%d") %></span>
-      「<%= blog.title %>」 by <%= blog.blog_author.name %>
-      </li>
-    <% end %>
-  </ul>
-  </section>
-</div>
-
-<section id="sns">
-<div class="fb-like-box" data-href="http://www.facebook.com/hokudai.igakuten" data-width="338" data-show-faces="true" data-stream="false" data-border-color="#fff" data-header="true"></div>
-<a class="twitter-timeline" width="340" height="600" href="https://twitter.com/igakuten" data-widget-id="289913621562130432">@igakuten からのツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-</section>
