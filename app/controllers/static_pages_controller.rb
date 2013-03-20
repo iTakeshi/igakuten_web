@@ -13,7 +13,7 @@
 # HTMLファイルは app/views/static_pages/(action).html.erb に定義してください。
 
 class StaticPagesController < ApplicationController
-  # skip_before_filter :authenticate, only: %i(index about contents recture access)
+  skip_before_filter :authenticate
 
   def index
     @blog_updates = BlogEntry.includes(:blog_author).order('created_at DESC').limit(5)
