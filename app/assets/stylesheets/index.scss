@@ -21,9 +21,40 @@
   #campus-nav {
     display: none;
     width: 940px;
-    height: 350px;
+    height: 600px;
     position: absolute;
     top: 0; left: 0;
+
+    .campus-nav-box {
+      width: 220px;
+      height: 130px;
+      position: absolute;
+      border: 3px solid;
+      border-radius: 20px;
+
+      &:nth-child(1) { top: 190px; left:  -3px; border-color: #f48085; background-color: #fff8f9; }
+      &:nth-child(2) { top:  40px; left: 117px; border-color: #f49403; background-color: #fffbeb; }
+      &:nth-child(3) { top: -10px; left: 357px; border-color: #72db49; background-color: #f7fff1; }
+      &:nth-child(4) { top:  40px; left: 597px; border-color: #00b6ef; background-color: #f4fbff; }
+      &:nth-child(5) { top: 190px; left: 717px; border-color: #bb8ffa; background-color: #faf6ff; }
+
+      .campus-nav-box-igakun {
+        float: left;
+        height: 110px;
+        width: 70px;
+        margin: 10px;
+      }
+
+      .campus-nav-box-text {
+        float: left;
+        width: 120px;
+        height: 50px;
+        margin: 40px 10px 40px 0;
+        font-size: 20px;
+        line-height: 25px;
+        text-align: center;
+      }
+    }
   }
 }
 
