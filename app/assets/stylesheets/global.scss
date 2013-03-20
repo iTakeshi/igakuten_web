@@ -81,3 +81,17 @@ p {
     margin: 0;
   }
 }
+
+.author {
+  margin: 10px;
+  .face {
+    float: left;
+    width: 120px;
+    height: 120px;
+  }
+
+  .name {
+    float: left;
+    margin: 33px 20px;
+  }
+}
