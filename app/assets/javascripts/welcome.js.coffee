@@ -2,10 +2,14 @@ window.onload = ->
   return false if $('#welcome').size() == 0 # run this script only if this is the top page
 
   welcome = new Image()
+  welcome.src = 'assets/welcome.jpg'
   welcome.onload = ->
     $('#campus').css { background: 'url("assets/welcome.jpg")', backgroundRepeat: 'no-repeat', backgroundPosition: '0 0' }
-    welcome_animation()
-  welcome.src = 'assets/welcome.jpg'
+    if $.cookie('skip_animation') == 'true'
+      skip_animation()
+    else
+      welcome_animation()
+      $.cookie('skip_animation', 'true')
 
 welcome_animation = ->
   $('#loading').animate { opacity: 'toggle' }, 500, ->
@@ -37,3 +41,9 @@ welcome_animation = ->
       $('#campus').delay(interval * 1).queue -> $(@).css('background-position', '-' + 14 * width + 'px 0').dequeue()
 
       $('#campus').delay(interval * 2).queue -> $(@).next('#campus-nav').animate { opacity: 'toggle' }, 500
+
+skip_animation = ->
+  $('#loading').animate { opacity: 'toggle' }, 500, ->
+    $('#campus').css('background-position', '-' + 14 * 640 + 'px 0')
+    $('#campus').animate { opacity: 'toggle' }, 500, ->
+      $('#campus-nav').animate { opacity: 'toggle'}, 500
