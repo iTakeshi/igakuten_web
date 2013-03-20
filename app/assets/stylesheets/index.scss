@@ -38,21 +38,28 @@
       &:nth-child(4) { top:  40px; left: 597px; border-color: #00b6ef; background-color: #f4fbff; }
       &:nth-child(5) { top: 190px; left: 717px; border-color: #bb8ffa; background-color: #faf6ff; }
 
-      .campus-nav-box-igakun {
-        float: left;
-        height: 110px;
-        width: 70px;
-        margin: 10px;
-      }
+      a {
+        display: block;
+        width: 220px;
+        height: 130px;
 
-      .campus-nav-box-text {
-        float: left;
-        width: 120px;
-        height: 50px;
-        margin: 40px 10px 40px 0;
-        font-size: 20px;
-        line-height: 25px;
-        text-align: center;
+        .campus-nav-box-igakun {
+          float: left;
+          height: 110px;
+          width: 70px;
+          margin: 10px;
+        }
+
+        .campus-nav-box-text {
+          float: left;
+          width: 120px;
+          height: 50px;
+          margin: 40px 10px 40px 0;
+          font-size: 20px;
+          line-height: 25px;
+          text-align: center;
+          color: #333;
+        }
       }
     }
   }
