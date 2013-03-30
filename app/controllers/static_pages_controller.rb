@@ -30,9 +30,9 @@ class StaticPagesController < ApplicationController
     @current_page = 'contents'
   end
 
-  def recture
+  def lecture
     @page_title = "講演会"
-    @current_page = 'recture'
+    @current_page = 'lecture'
   end
 
   def events
