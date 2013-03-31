@@ -35,6 +35,10 @@ class StaticPagesController < ApplicationController
     @current_page = 'lecture'
   end
 
+  def recture
+    redirect_to '/lecture'
+  end
+
   def events
     @page_title = "イベント"
     @current_page = 'events'
