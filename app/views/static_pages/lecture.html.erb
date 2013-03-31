@@ -4,27 +4,23 @@
     margin: 0 0 20px;
   }
 
-  #title ul {
+  #title #detail {
     float: left;
     width: 520px;
     margin: 0 20px 0 0;
   }
 
-  #title ul li #title {
+  #title #detail ul li #title {
     font-size: 40px;
     line-height: 48px;
     border-radius: 5px;
   }
 
-  #title ul li em {
+  #title #detail ul li em {
     display: block;
     font-size: 28px;
     line-height: 34px;
     margin-bottom: 10px;
-  }
-
-  #title ul li:last-child {
-    margin: 20px 0 0;
   }
 
   #title #picture {
@@ -51,13 +47,20 @@
 <h1>鳥越俊太郎さん 特別講演会</h1>
 
 <div id="title">
-  <ul>
-    <li><!-- <h2 id="title"></h2> --></li>
-    <li><em>2013年6月8日（土）午後2時</em></li>
-    <li><em>医学部学友会館「フラテ」ホール</em></li>
-    <li>演題未定</li>
-    <li>1時間程度の講演会終了後には、鳥越さんの著書販売＋サイン会を実施予定です。</li>
-  </ul>
+  <div id="detail">
+    <ul>
+      <li><!-- <h2 id="title"></h2> --></li>
+      <li><em>2013年6月8日（土）午後2時</em></li>
+      <li><em>医学部学友会館「フラテ」ホール</em></li>
+      <li>※演題未定</li>
+    </ul>
+    <h2 style="margin-top: 20px">講演会日程</h2>
+    <ul>
+      <li><span style="display: inline-block; width: 90px;">13:30~</span> 開場</li>
+      <li><span style="display: inline-block; width: 90px;">14:00~15:30</span> 講演会、質疑応答</li>
+      <li><span style="display: inline-block; width: 90px;">15:30~16:30</span> サイン会、著書販売</li>
+    </ul>
+  </div>
   <div id="picture"><%= image_tag 'torigoe.jpg', title: '鳥越さん 顔写真', width: 400 %></div>
   <span class="clearfix"></span>
 </div>
@@ -74,7 +77,7 @@
         サンデー毎日編集長となる。
         1988年毎日新聞退社後、テレビ朝日系列の報道ドキュメンタリー番組「ザ・スクープ」の司会に就任し、
         以後も「ニュースの職人」として数多くのニュース番組の司会・キャスターとして活躍。<br>
-        2003年、関西大学社会学部の教授に就任。
+        <br>
       </p>
     </section>
     <section>
