@@ -58,3 +58,8 @@ task :create_symlinks_to_shared_dirs, :roles => :app do
   run "#{try_sudo} ln -nfs #{shared_path}/public/ckeditor #{release_path}/public/ckeditor"
 end
 after "deploy:assets:symlink", "create_symlinks_to_shared_dirs"
+
+after "deploy", "refresh_sitemaps"
+task :refresh_sitemaps do
+  run "cd #{latest_release} && RAILS_ENV=#{rails_env} rake sitemap:refresh"
+end
