@@ -33,6 +33,10 @@
   <% end %>
 
   <div>
+    合計人数：<%= @booking.members.split(',').length + 1 %>
+  </div>
+
+  <div>
     <%= f.submit '申し込む' %>
   </div>
 
