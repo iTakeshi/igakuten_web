@@ -38,6 +38,7 @@
 
   <div>
     <%= f.submit '申し込む' %>
+    <%= f.submit '内容を修正', onclick: "$('form#new_booking').attr({ action: '#{new_booking_path}', method: 'get' })" %>
   </div>
 
 <% end %>

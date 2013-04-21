@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
   def new
-    @booking = Booking.new
+    if params[:booking]
+      set_booking
+    else
+      @booking = Booking.new
+    end
   end
 
   def confirm
