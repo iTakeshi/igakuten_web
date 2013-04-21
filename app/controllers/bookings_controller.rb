@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
 
   def confirm
     set_booking
+    render action: :new unless @booking.valid?
   end
 
   def create

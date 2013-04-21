@@ -1,4 +1,18 @@
 <%= form_for @booking, url: confirm_booking_path do |f| %>
+  <% if @booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @booking.errors.count %>個の項目にエラーがあります。</h2>
+
+      <ul>
+        <% @booking.errors.messages.each do |msg| %>
+          <% msg[1].each do |str| %>
+            <li><%= str %></li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <fieldset>
 
     <div>
@@ -39,18 +53,28 @@
 <% end %>
 
 <script type="text/javascript">
-  $('button#add_member').click(function(){
-    $member_input = $('input#member_name');
-    member_name = $member_input.val();
-    if(!member_name){ return false; }
-    if($('#members li:contains(' + member_name + ')').length > 0){ $member_input.val(""); $member_input.focus(); return false; }
-    $member_input.val("");
-    $member_input.focus();
+  $(function(){
+    $.each($('input#booking_members').val().split(','), function(){
+      $('#members').append($('<li></li>').text(this));
+    });
 
-    $('#members').append($("<li></li>").text(member_name));
+    $('button#add_member').click(function(){
+      $member_input = $('input#member_name');
+      member_name = $member_input.val();
+      if(!member_name){ return false; }
+      if($('#members li:contains(' + member_name + ')').length > 0){
+        $member_input.val("");
+        $member_input.focus();
+        return false;
+      }
+      $member_input.val("");
+      $member_input.focus();
 
-    $members_hidden = $('input#booking_members');
-    members_str = $members_hidden.val() + ',' + member_name;
-    $members_hidden.val(members_str);
+      $('#members').append($("<li></li>").text(member_name));
+
+      $members_hidden = $('input#booking_members');
+      members_str = $members_hidden.val() + ',' + member_name;
+      $members_hidden.val(members_str);
+    });
   });
 </script>
