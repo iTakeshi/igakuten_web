@@ -1,0 +1,16 @@
+新規申し込み
+
+受付日時：<%= Time.now.to_s(:db) %>
+
+代表者様：
+  ご芳名： <%= @booking.delegate_name %>
+  ふりがな： <%= @booking.delegate_yomi %>
+  ご住所： <%= @booking.delegate_address %>
+  お電話番号： <%= @booking.delegate_phone %>
+
+お連れ様：
+<% @booking.members.split(',').each do |m| %>
+  <%= m %>
+<% end %>
+
+合計人数：<%= @booking.members.split(',').length + 1 %>

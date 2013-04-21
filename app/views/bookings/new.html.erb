@@ -1,2 +1,56 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<%= form_for @booking, url: confirm_booking_path do |f| %>
+  <fieldset>
+
+    <div>
+      代表者様
+      <ul>
+        <li>
+          <%= f.label :delegate_name, 'ご芳名' %>
+          <%= f.text_field 'delegate_name' %>
+        </li>
+        <li>
+          <%= f.label :delegate_yomi, 'ふりがな' %>
+          <%= f.text_field 'delegate_yomi' %>
+        </li>
+        <li>
+          <%= f.label :delegate_address, 'ご住所' %>
+          <%= f.text_field 'delegate_address' %>
+        </li>
+        <li>
+          <%= f.label :delegate_phone, 'お電話番号' %>
+          <%= f.telephone_field 'delegate_phone' %>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      お連れ様ご芳名
+      <ul id="members">
+      </ul>
+      <%= text_field_tag 'member_name' %><%= button_tag '追加', type: 'button', id: 'add_member' %>
+      <%= f.hidden_field :members %>
+    </div>
+
+    <div>
+      <%= submit_tag '確認' %>
+    </div>
+
+  </fieldset>
+<% end %>
+
+<script type="text/javascript">
+  $('button#add_member').click(function(){
+    $member_input = $('input#member_name');
+    member_name = $member_input.val();
+    if(!member_name){ return false; }
+    if($('#members li:contains(' + member_name + ')').length > 0){ $member_input.val(""); $member_input.focus(); return false; }
+    $member_input.val("");
+    $member_input.focus();
+
+    $('#members').append($("<li></li>").text(member_name));
+
+    $members_hidden = $('input#booking_members');
+    members_str = $members_hidden.val() + ',' + member_name;
+    $members_hidden.val(members_str);
+  });
+</script>

@@ -1,0 +1,39 @@
+以下の通り申し込みます。
+
+<%= form_for @booking, url: booking_path do |f| %>
+  <%= f.hidden_field :delegate_name %>
+  <%= f.hidden_field :delegate_yomi %>
+  <%= f.hidden_field :delegate_address %>
+  <%= f.hidden_field :delegate_phone %>
+  <%= f.hidden_field :members %>
+
+  <div>
+    代表者様
+    <dl>
+      <dt>ご芳名</dt>
+      <dd><%= @booking.delegate_name %></dd>
+      <dt>ふりがな</dt>
+      <dd><%= @booking.delegate_yomi %></dd>
+      <dt>ご住所</dt>
+      <dd><%= @booking.delegate_address %></dd>
+      <dt>お電話番号</dt>
+      <dd><%= @booking.delegate_phone %></dd>
+    </dl>
+  </div>
+
+  <% if @booking.members.split(',').length > 0 %>
+    <div>
+      お連れ様ご芳名
+      <ul>
+        <% @booking.members.split(',').each do |m| %>
+          <li><%= m %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.submit '申し込む' %>
+  </div>
+
+<% end %>
