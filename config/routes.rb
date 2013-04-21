@@ -1,5 +1,7 @@
 IgakutenWeb::Application.routes.draw do
 
+  get "bookings/new"
+
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :blog_entries
