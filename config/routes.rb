@@ -1,7 +1,5 @@
 IgakutenWeb::Application.routes.draw do
 
-  get "bookings/new"
-
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :blog_entries
@@ -9,6 +7,9 @@ IgakutenWeb::Application.routes.draw do
 
   get '/blog', to: 'blog_entries#index'
   get '/blog/:id', to: 'blog_entries#show'
+
+  get  '/booking', to: 'bookings#new'
+  post '/booking', to: 'bookings#create'
 
   get '/admin', to: 'admin#index'
   get '/:action', controller: 'static_pages'
