@@ -8,8 +8,11 @@ IgakutenWeb::Application.routes.draw do
   get '/blog', to: 'blog_entries#index'
   get '/blog/:id', to: 'blog_entries#show'
 
-  get  '/booking', to: 'bookings#new'
-  post '/booking', to: 'bookings#create'
+  resource :booking, only: [:new, :create], controller: 'bookings' do
+    collection do
+      post 'confirm'
+    end
+  end
 
   get '/admin', to: 'admin#index'
   get '/:action', controller: 'static_pages'
