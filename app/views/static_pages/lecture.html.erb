@@ -42,6 +42,10 @@
   #profile div section:first-child {
     margin: 0 0 20px;
   }
+
+  em {
+    font-weight: bold;
+  }
 </style>
 
 <h1>鳥越俊太郎さん 特別講演会</h1>
@@ -51,7 +55,7 @@
     <ul>
       <li><!-- <h2 id="title"></h2> --></li>
       <li><em>2013年6月8日（土）午後2時</em></li>
-      <li><em>医学部学友会館「フラテ」ホール</em><em style="font-size: 20px;">限定280席</em></li>
+      <li><em>医学部学友会館「フラテ」ホール</em>
       <li>※演題未定</li>
     </ul>
     <h2 style="margin-top: 20px;">講演会日程</h2>
@@ -61,7 +65,8 @@
       <li><span style="display: inline-block; width: 90px;">15:30~16:30</span> サイン会、著書販売</li>
     </ul>
     <h3 style="margin-top: 20px;">お席の事前予約が可能です</h3>
-    <p>
+    <em style="font-size: 20px;">先着280名様限定</em></li>
+    <div>
       事前予約なら、確実にお席をご用意いたします。（当日受け付けも勿論歓迎いたします。）<br>
       また、事前予約をしてくださった方から抽選で鳥越さんのサイン色紙をプレゼントいたします!!<br>
       事前申し込み、講演会に関するお問い合わせはこちらまで。<br>
@@ -69,15 +74,22 @@
       お席のご指定はお受けいたしておりません。予めご了承ください。
       <h3>お申込み方法</h3>
       下記のいずれかの方法でお申し込みください。
-      <ul style="list-style-type: disc; margin: 0 0 0 20px;">
-        <li><%= link_to 'Webお申し込みフォーム', new_booking_path %></li>
+      <ul style="list-style-type: disc; margin: 0 0 10px 20px;">
         <li>メールにて（"at" を @ に置き換えてください）：hu.igakuten52.lect "at" gmail.com</li>
-        <li>お葉書にて：（医学展の住所）</li>
+        <li>
+          お葉書でも事前申し込みが出来るようになりました！<br>
+          〒060-8638<br>
+          札幌市北区北15条西7丁目　北海道大学医学部内　医学展実行委員会行<br>
+        </li>
       </ul>
-      <p>
-        メールまたはお葉書にてお申し込みの場合は…
-      </p>
-    </p>
+      メールまたはお葉書にてお申し込みの場合は以下の項目をご記入頂ますようお願いいたします。
+      <ul style="list-style-type: disc; margin: 0 0 10px 20px;">
+        <li>代表者様のお名前、ふりがな</li>
+        <li>代表者様の御電話番号</li>
+        <li>お連れ様のお名前（皆様）</li>
+      </ul>
+      <em>※北大病院や医学部への直接のお問い合わせはご遠慮ください。</em>
+    </div>
   </div>
   <div id="picture"><%= image_tag 'torigoe.jpg', title: '鳥越さん 顔写真', width: 400 %></div>
   <span class="clearfix"></span>
